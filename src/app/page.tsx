@@ -29,16 +29,16 @@ export default function Home() {
 
       <main className="z-10 max-w-5xl min-h-screen flex flex-col gap-12 justify-between items-center px-4 sm:px-8 md:px-12 py-12 ">
         <div>
-          <h2 className="fade-up font-space-grotesk text-xl opacity-70">
+          <h2 className="fade-up invisible font-space-grotesk text-xl opacity-70">
             bydiba.dev
           </h2>
         </div>
         <div className="flex flex-col md:flex-row gap-20">
           <div className="flex-2 flex flex-col gap-4">
-            <h1 className="fade-up text-5xl md:text-6xl font-bold mb-4 md:mb-8 text-balance">
+            <h1 className="fade-up invisible text-5xl md:text-6xl font-bold mb-4 md:mb-8 text-balance">
               Hi, I&apos;m Diba. Full-Stack & AI Developer.
             </h1>
-            <p className="fade-up text-xl md:text-2xl text-neutral-700 text-balance">
+            <p className="fade-up invisible text-xl md:text-2xl text-neutral-700 text-balance">
               My full portfolio is{" "}
               <span className="text-neutral-800 font-medium underline">
                 currently in development
@@ -47,11 +47,11 @@ export default function Home() {
             </p>
           </div>
           <div className="flex-1">
-            <h2 className="fade-up text-sm md:text-base uppercase text-neutral-600 mb-6 md:mb-8 font-light tracking-wider">
+            <h2 className="fade-up invisible text-sm md:text-base uppercase text-neutral-600 mb-6 md:mb-8 font-light tracking-wider">
               Selected Projects
             </h2>
             <div className="font-space-grotesk flex flex-col gap-8 md:gap-10 font-medium text-xl md:text-2xl">
-              <div className="fade-up">
+              <div className="fade-up invisible">
                 <Link
                   href="https://interview.bydiba.dev/"
                   target="_blank"
@@ -71,7 +71,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="fade-up">
+              <div className="fade-up invisible">
                 <Link
                   href="https://landing.bydiba.dev/"
                   target="_blank"
@@ -90,7 +90,7 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
-              <div className="fade-up">
+              <div className="fade-up invisible">
                 <Link
                   href="https://motors.bydiba.dev/"
                   target="_blank"
@@ -113,7 +113,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center gap-2.5">
-          <div className="fade-up">
+          <div className="fade-up invisible">
             <Link
               href="https://www.linkedin.com/in/diba-malikzadeh-74700736a/"
               target="_blank"
@@ -138,7 +138,7 @@ export default function Home() {
               </svg>
             </Link>
           </div>
-          <div className="fade-up">
+          <div className="fade-up invisible">
             <Link
               href="https://github.com/dmalikzadeh"
               target="_blank"
@@ -165,7 +165,7 @@ export default function Home() {
               </svg>
             </Link>
           </div>
-          <div className="fade-up">
+          <div className="fade-up invisible">
             <Link
               href="mailto:contact@bydiba.dev"
               aria-label="Send me an email"
