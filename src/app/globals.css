@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #edede9;
   --foreground: #171717;
 }
 
@@ -10,17 +10,86 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-inter: var(--font-inter);
+  --font-space-grotesk: var(--font-space-grotesk);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.blur {
+  filter: blur(100px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gradient-mask {
+  border-radius: 99999px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  min-width: 1000px;
+  height: 100vh;
+  transform: translate(-50%, -50%) scale(0.7);
+  overflow: hidden;
+}
+
+.spin-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vw;
+  transform: translate(-50%, -50%);
+}
+
+.spinning-gradient {
+  width: 100%;
+  height: 100%;
+  animation: spin 8s linear infinite;
+  background: conic-gradient(
+    from 0deg,
+    #ffb5a7,
+    #f9dcc4,
+    #f8edeb,
+    #fec89a,
+    #fcd5ce
+  );
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+.hover-underline {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.4s ease, right 0s;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+  right: auto;
+  left: 0;
 }
