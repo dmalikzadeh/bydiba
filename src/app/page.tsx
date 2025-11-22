@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-inter relative flex h-screen items-center justify-center bg-[#edede9] text-neutral-800 px-4 sm:px-8 md:px-12 py-12 overflow-x-hidden">
+    <div className="font-inter relative flex h-full min-h-screen items-center justify-center bg-[#edede9] text-neutral-800 overflow-x-hidden">
       <div className="blur">
         <div className="gradient-mask">
           <div className="spin-wrapper">
@@ -13,7 +13,7 @@ export default function Home() {
         </div>
       </div>
 
-      <main className="z-10 max-w-4xl h-full flex flex-col justify-between items-center">
+      <main className="z-10 max-w-4xl min-h-screen flex flex-col gap-12 justify-between items-center px-4 sm:px-8 md:px-12 py-12 ">
         <div>
           <h2 className="font-space-grotesk text-xl opacity-70">bydiba.dev</h2>
         </div>
