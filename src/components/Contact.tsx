@@ -238,11 +238,11 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="contact-section relative h-[100svh] flex items-center p-4 !pt-24 sm:p-12"
+      className="contact-section relative h-[100svh] flex items-center p-4 pt-20 sm:pt-24 sm:p-12"
     >
-      <div className="flex flex-col sm:flex-row gap-12 w-full sm:h-auto h-full">
+      <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 w-full sm:h-auto h-full">
         <div className="sm:flex-1 sm:pt-12">
-          <h2 className="contact-title font-clash text-5xl sm:text-6xl mb-6">
+          <h2 className="contact-title font-clash text-5xl sm:text-6xl mb-4 sm:mb-6">
             let&apos;s talk.
           </h2>
           <p className="contact-subtitle max-w-sm text-lg sm:text-xl text-black/80 font-light ">
@@ -251,7 +251,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="sm:hidden mt-auto flex flex-col gap-4 items-end text-black/60">
+        <div className="sm:hidden text-sm flex flex-col gap-3 items-end text-black/60">
           <div className="mobile-link flex items-center gap-2">
             <a
               href="mailto:contact@bydiba.dev"
@@ -310,17 +310,17 @@ export default function Contact() {
 
         <div className="z-10 relative flex-1">
           <div className="contact-window relative flex flex-col bg-[#fafafa] rounded-3xl w-full h-full border border-black/10 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
-            <div className="border-b border-black/10 h-[52px] flex items-center justify-between px-2">
+            <div className="border-b border-black/10 h-[60px] sm:h-[52px] flex items-center justify-between px-2">
               <div className="flex gap-2 px-2.5">
-                <span className="w-3.5 h-3.5 rounded-full bg-[#FF5F57]" />
-                <span className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E]" />
-                <span className="w-3.5 h-3.5 rounded-full bg-[#28C840]" />
+                <span className="w-4 h-4 sm:w-3.5 sm:h-3.5 rounded-full bg-[#FF5F57]" />
+                <span className="w-4 h-4 sm:w-3.5 sm:h-3.5 rounded-full bg-[#FFBD2E]" />
+                <span className="w-4 h-4 sm:w-3.5 sm:h-3.5 rounded-full bg-[#28C840]" />
               </div>
 
               <button
                 type="submit"
                 form="contact-form"
-                className="w-9 h-9 rounded-full flex items-center justify-center
+                className="w-11 h-11 sm:w-9 sm:h-9 rounded-full flex items-center justify-center
                           bg-[#0A84FF] hover:brightness-120 text-white
                           disabled:opacity-40 disabled:pointer-events-none
                           active:scale-90 cursor-pointer transition duration-300"
@@ -347,7 +347,7 @@ export default function Contact() {
                   </svg>
                 ) : (
                   <svg
-                    className="w-5 h-5"
+                    className="w-6 h-6 sm:w-5 sm:h-5"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     stroke="currentColor"
@@ -416,7 +416,7 @@ export default function Contact() {
               id="contact-form"
               noValidate
               onSubmit={handleSubmit}
-              className="pl-6 flex-1 flex flex-col text-sm text-black/70"
+              className="pl-6 flex-1 flex flex-col sm:text-sm text-black/70"
             >
               <div
                 aria-hidden="true"
@@ -437,7 +437,7 @@ export default function Contact() {
                 <span className="text-black/80">{CONTACT_EMAIL}</span>
               </div>
 
-              <div className="contact-input flex items-center gap-1.5 border-b border-black/10 py-3">
+              <div className="contact-input flex items-center border-b border-black/10 py-3">
                 <span className="text-black/40">Subject:</span>
                 <input
                   aria-label="Subject"
@@ -445,11 +445,11 @@ export default function Contact() {
                   value={draft.subject}
                   onChange={handleChange("subject")}
                   name="subject"
-                  className="flex-1 bg-transparent outline-none"
+                  className="flex-1 bg-transparent outline-none px-1.5"
                 />
               </div>
 
-              <div className="contact-input flex items-center gap-1.5 border-b border-black/10 py-3">
+              <div className="contact-input flex items-center border-b border-black/10 py-3">
                 <span className="text-black/40">From:</span>
                 <input
                   aria-label="Your contact info"
@@ -457,7 +457,7 @@ export default function Contact() {
                   value={draft.from}
                   onChange={handleChange("from")}
                   name="from"
-                  className="flex-1 bg-transparent outline-none"
+                  className="flex-1 bg-transparent outline-none px-1.5"
                 />
               </div>
 
@@ -468,7 +468,7 @@ export default function Contact() {
                   value={draft.message}
                   onChange={handleChange("message")}
                   name="message"
-                  className="min-h-24 sm:min-h-80 w-full h-full resize-none bg-transparent outline-none"
+                  className="min-h-24 sm:min-h-80 w-full h-full resize-none bg-transparent outline-none pr-1.5"
                 />
               </div>
             </form>

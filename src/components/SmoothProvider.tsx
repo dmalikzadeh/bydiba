@@ -20,6 +20,7 @@ export default function SmoothProvider() {
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
       smooth: 1.5,
+      smoothTouch: 0.1,
       normalizeScroll: true,
     });
 

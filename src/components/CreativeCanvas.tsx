@@ -71,11 +71,15 @@ function visibleWidthAtZDepth(depth: number, camera: THREE.PerspectiveCamera) {
 function createTextParticles(
   font: ReturnType<FontLoader["parse"]>,
   camera: THREE.PerspectiveCamera,
+  screenWidth: number,
 ) {
   const viewportWidth = visibleWidthAtZDepth(0, camera);
   const viewportHeight = visibleHeightAtZDepth(0, camera);
-  const textSize = Math.min(viewportWidth * 0.14, viewportHeight * 0.22);
-  const lineHeight = textSize * 1.2;
+  const isCompact = screenWidth < 640;
+  const textSize = isCompact
+    ? Math.min(viewportWidth * 0.17, viewportHeight * 0.24)
+    : Math.min(viewportWidth * 0.14, viewportHeight * 0.22);
+  const lineHeight = textSize * (isCompact ? 1.12 : 1.2);
   const totalHeight = lineHeight * (TEXT_LINES.length - 1);
 
   const baseTop = new THREE.Color("#111111");
@@ -108,7 +112,12 @@ function createTextParticles(
       totalHeight / 2 -
       lineIndex * lineHeight;
 
-    const sampleCount = Math.max(80, Math.round(textSize * 5));
+    const sampleCount = Math.max(
+      isCompact ? 110 : 90,
+      Math.round(textSize * (isCompact ? 6.2 : 5.2)),
+    );
+    const pointBaseSize = isCompact ? 1.8 : 2.2;
+    const pointSizeJitter = isCompact ? 1 : 1.4;
 
     allShapes.forEach((shape) => {
       shape.getSpacedPoints(sampleCount).forEach((point) => {
@@ -125,7 +134,7 @@ function createTextParticles(
 
         positions.push(x, y, z);
         colors.push(color.r, color.g, color.b);
-        sizes.push(2.2 + Math.random() * 1.4);
+        sizes.push(pointBaseSize + Math.random() * pointSizeJitter);
       });
     });
 
@@ -151,6 +160,7 @@ export default function CreativeCanvas() {
       alpha: true,
       powerPreference: "high-performance",
     });
+    const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(container.clientWidth, container.clientHeight, false);
@@ -164,6 +174,7 @@ export default function CreativeCanvas() {
     const raycaster = new THREE.Raycaster();
     const pointer = new THREE.Vector2(-9999, 9999);
     const pointerDown = { current: false };
+    let containerRect = container.getBoundingClientRect();
 
     const interactionPlane = new THREE.Mesh(
       new THREE.PlaneGeometry(1, 1),
@@ -203,6 +214,7 @@ export default function CreativeCanvas() {
     const rebuild = () => {
       const width = Math.max(container.clientWidth, 1);
       const height = Math.max(container.clientHeight, 1);
+      containerRect = container.getBoundingClientRect();
 
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
@@ -212,7 +224,7 @@ export default function CreativeCanvas() {
       const planeHeight = visibleHeightAtZDepth(0, camera);
       interactionPlane.scale.set(planeWidth, planeHeight, 1);
 
-      const particleData = createTextParticles(font, camera);
+      const particleData = createTextParticles(font, camera, width);
       const geometry = new THREE.BufferGeometry();
 
       const posAttr = new THREE.Float32BufferAttribute(
@@ -254,26 +266,37 @@ export default function CreativeCanvas() {
       return hit?.point ?? null;
     };
 
+    const updatePointer = (clientX: number, clientY: number) => {
+      pointer.x =
+        ((clientX - containerRect.left) / containerRect.width) * 2 - 1;
+      pointer.y =
+        -((clientY - containerRect.top) / containerRect.height) * 2 + 1;
+    };
+
     const onMove = (e: PointerEvent) => {
-      const rect = container.getBoundingClientRect();
-      pointer.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-      pointer.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+      updatePointer(e.clientX, e.clientY);
     };
     const onLeave = () => {
       pointer.set(-9999, 9999);
       pointerDown.current = false;
     };
-    const onDown = () => {
+    const onDown = (e: PointerEvent) => {
+      containerRect = container.getBoundingClientRect();
+      updatePointer(e.clientX, e.clientY);
       pointerDown.current = true;
     };
     const onUp = () => {
       pointerDown.current = false;
+      if (isCoarsePointer) {
+        pointer.set(-9999, 9999);
+      }
     };
 
     container.addEventListener("pointermove", onMove);
     container.addEventListener("pointerleave", onLeave);
     container.addEventListener("pointerdown", onDown);
     window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onUp);
 
     const resizeObserver = new ResizeObserver(rebuild);
     resizeObserver.observe(container);
@@ -294,8 +317,34 @@ export default function CreativeCanvas() {
 
       const hitPoint = getHitPoint();
       const time = performance.now() * 0.001;
-      const radius = pointerDown.current ? 24 : 18;
-      const lift = pointerDown.current ? 6 : 3;
+      const radius = pointerDown.current
+        ? isCoarsePointer
+          ? 28
+          : 24
+        : isCoarsePointer
+          ? 20
+          : 18;
+      const lift = pointerDown.current
+        ? isCoarsePointer
+          ? 4.5
+          : 6
+        : isCoarsePointer
+          ? 2.4
+          : 3;
+      const push = pointerDown.current
+        ? isCoarsePointer
+          ? 5
+          : 7
+        : isCoarsePointer
+          ? 2.2
+          : 3;
+      const sizeBoost = pointerDown.current
+        ? isCoarsePointer
+          ? 2.4
+          : 3.5
+        : isCoarsePointer
+          ? 1.2
+          : 1.8;
 
       for (let i = 0; i < sizeArray.length; i++) {
         const bi = i * 3;
@@ -324,7 +373,6 @@ export default function CreativeCanvas() {
           if (dist < radius) {
             const force = (radius - Math.max(dist, 0.001)) / radius;
             const angle = Math.atan2(dy, dx);
-            const push = pointerDown.current ? 7 : 3;
 
             cx += Math.cos(angle) * force * push;
             cy += Math.sin(angle) * force * push;
@@ -338,11 +386,17 @@ export default function CreativeCanvas() {
             tr = c.r;
             tg = c.g;
             tb = c.b;
-            ts = restSizes[i] + force * (pointerDown.current ? 3.5 : 1.8);
+            ts = restSizes[i] + force * sizeBoost;
           }
         }
 
-        const ease = pointerDown.current ? 0.05 : 0.08;
+        const ease = pointerDown.current
+          ? isCoarsePointer
+            ? 0.06
+            : 0.05
+          : isCoarsePointer
+            ? 0.09
+            : 0.08;
         positionArray[bi] = cx + (tx - cx) * ease;
         positionArray[bi + 1] = cy + (ty - cy) * ease;
         positionArray[bi + 2] = cz + (tz - cz) * 0.07;
@@ -402,6 +456,7 @@ export default function CreativeCanvas() {
       container.removeEventListener("pointerleave", onLeave);
       container.removeEventListener("pointerdown", onDown);
       window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
       if (particles) {
         scene.remove(particles);
         particles.geometry.dispose();
@@ -418,7 +473,7 @@ export default function CreativeCanvas() {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 touch-none"
+      className="absolute inset-0 touch-pan-y"
       aria-hidden="true"
     />
   );

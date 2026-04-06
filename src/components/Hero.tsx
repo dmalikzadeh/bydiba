@@ -188,14 +188,14 @@ export default function Hero() {
               </span>
             </h1>
 
-            <span className="scroll-fade">
+            <div className="scroll-fade">
               <p className="hero-subtitle invisible max-w-xl text-xl sm:text-2xl text-black/60 font-light">
                 I build{" "}
                 <span className="text-black font-normal">full-stack</span> and{" "}
                 <span className="text-black font-normal">AI-powered</span>{" "}
                 products that are both technically solid and carefully designed.
               </p>
-            </span>
+            </div>
           </div>
         </div>
         <div className="scroll-fade flex items-end justify-between">

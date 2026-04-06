@@ -307,11 +307,11 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="projects-section flex items-center justify-center h-[100svh] p-4 !pt-24 sm:p-12"
+      className="projects-section flex items-center justify-center h-[100svh] p-4 pt-20 sm:pt-24 sm:p-12"
     >
-      <div className="projects-content sm:h-auto h-full flex flex-col sm:items-end sm:flex-row gap-12 sm:gap-24">
+      <div className="projects-content sm:h-auto h-full flex flex-col sm:items-end sm:flex-row gap-2 sm:gap-24">
         <div className="sm:w-[40%] flex flex-col gap-12 sm:gap-24">
-          <h2 className="projects-title font-clash text-5xl sm:text-6xl">
+          <h2 className="projects-title font-clash text-5xl sm:text-6xl border-b sm:border-none pb-4 sm:pb-0 mb-4 sm:mb-0 border-black/10">
             projects.
           </h2>
 
@@ -498,19 +498,19 @@ export default function Projects() {
               ref={contentRef}
               className="p-2 mt-4 sm:mt-6 flex flex-1 flex-col justify-between gap-4 sm:gap-6"
             >
-              <div className="flex gap-4 items-start justify-between">
-                <h3 className="font-clash text-2xl sm:text-3xl">
-                  {project.name}
-                </h3>
-              </div>
+              <h3 className="font-clash text-2xl sm:text-3xl">
+                {project.name}
+              </h3>
 
-              <p className="font-light text-black/60">{project.description}</p>
+              <p className="text-sm sm:text-base font-light text-black/60">
+                {project.description}
+              </p>
 
               <div className="mt-2 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono font-light rounded-full bg-black/3 px-3 py-1.5 text-xs text-black/60 hover:-translate-y-[2px] hover:bg-black/5 hover:text-black transition duration-300"
+                    className="font-mono font-light rounded-full bg-black/3 px-3 py-1.5 text-[10px] sm:text-xs text-black/60 hover:-translate-y-[2px] hover:bg-black/5 hover:text-black transition duration-300"
                   >
                     {tag}
                   </span>
@@ -521,12 +521,12 @@ export default function Projects() {
         </div>
 
         {/** mobile navigation */}
-        <div className="mobile-nav sm:hidden flex items-center justify-between gap-8">
+        <div className="mobile-nav sm:hidden flex items-center justify-between gap-8 mt-auto">
           <div className="mobile-nav-arrow">
             <button
               type="button"
               onClick={handlePreviousProject}
-              className="w-14 h-14 border rounded-full flex items-center justify-center text-black/40 hover:text-black active:text-black active:scale-90 transition duration-300"
+              className="w-12 h-12 border rounded-full flex items-center justify-center text-black/40 hover:text-black active:text-black active:scale-90 transition duration-300"
               aria-label="Previous project"
             >
               <svg
@@ -552,7 +552,7 @@ export default function Projects() {
                   key={item.name}
                   type="button"
                   onClick={() => handleProjectSelect(index)}
-                  className="mobile-nav-step group relative h-1 flex-1 overflow-hidden rounded-full bg-black/10"
+                  className="mobile-nav-step group relative h-0.5 flex-1 overflow-hidden rounded-full bg-black/10"
                   aria-label={`Go to ${item.name}`}
                   aria-pressed={isActive}
                 >
@@ -569,7 +569,7 @@ export default function Projects() {
             <button
               type="button"
               onClick={handleNextProject}
-              className="w-14 h-14 border rounded-full flex items-center justify-center text-black/40 hover:text-black active:text-black active:scale-90 transition duration-300"
+              className="w-12 h-12 border rounded-full flex items-center justify-center text-black/40 hover:text-black active:text-black active:scale-90 transition duration-300"
               aria-label="Next project"
             >
               <svg

@@ -154,11 +154,11 @@ export default function About() {
       className="about-section flex items-center h-[100svh] p-4 !pt-24 sm:p-12"
     >
       <div className="relative max-w-lg mx-auto">
-        <h2 className="about-title font-clash text-5xl sm:text-6xl text-black text-center mb-12">
+        <h2 className="about-title font-clash text-5xl sm:text-6xl text-black text-center mb-8 sm:mb-12">
           about me.
         </h2>
 
-        <div className="space-y-8 text-lg text-black/70">
+        <div className="space-y-4 sm:space-y-8 sm:text-lg text-black/70">
           {aboutParagraphs.map((paragraph) => (
             <p key={paragraph} className="about-paragraph">
               {paragraph}
@@ -169,7 +169,7 @@ export default function About() {
         <div className="about-icon">
           <svg
             ref={iconRef}
-            className="w-16 h-16 absolute -top-16 left-0 sm:-left-24 transition-colors duration-300 hover:text-[#ef476f]"
+            className="w-14 h-14 sm:w-16 sm:h-16 absolute -top-16 left-0 sm:-left-24 transition-colors duration-300 hover:text-[#ef476f]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
@@ -183,7 +183,7 @@ export default function About() {
         <div className="about-icon">
           <svg
             ref={iconAltRef}
-            className="w-18 h-18 absolute -bottom-24 sm:-bottom-12 right-0 sm:-right-32 transition-colors duration-300 hover:text-[#ffb703]"
+            className="w-16 h-16 sm:w-18 sm:h-18 absolute -bottom-24 sm:-bottom-12 right-0 sm:-right-32 transition-colors duration-300 hover:text-[#ffb703]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
