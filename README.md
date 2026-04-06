@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# bydiba
 
-## Getting Started
+Source for [bydiba.dev](https://bydiba.dev), a portfolio site built to feel polished, expressive, and technically deliberate.
 
-First, run the development server:
+## Live Demo
+
+https://bydiba.dev
+
+This project is a single-page portfolio with section-based storytelling, GSAP-driven motion, a responsive projects experience, a lightweight contact flow, and a custom Three.js creative section to close the site.
+
+## Overview
+
+- Built with the Next.js App Router
+- Designed as a motion-led portfolio, not a generic template
+- Uses GSAP for section reveals, pinned scroll scenes, and interaction polish
+- Uses Three.js for the interactive creative canvas
+- Includes a server-side contact route powered by Resend
+- Ships with `robots.txt` and `sitemap.xml` metadata routes
+
+## Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- GSAP
+- Three.js
+- Resend
+
+## Features
+
+- Strong visual direction with custom typography and layered gradients
+- Scroll-based section choreography across Hero, Projects, About, Skills, Contact, and Creative
+- Responsive mobile and desktop interaction patterns
+- Project previews with direction-aware transitions
+- Contact form with lightweight validation and spam honeypot protection
+- Public source for reference, iteration, and learning
+
+## Running Locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Environment Variables
+
+Create a local `.env.local` file with:
+
+```bash
+RESEND_API_KEY=your_resend_api_key
+```
+
+Without that key, the contact form UI will still render, but the `/api/contact` route will not be able to send messages.
+
+## Scripts
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+src/app
+src/components
+public
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app`: routes, metadata, API handlers, global styles
+- `src/components`: all section components, navigation state, motion logic
+- `public`: project media, icons, and static assets
 
-## Learn More
+## Notes
 
-To learn more about Next.js, take a look at the following resources:
+- This repo reflects the live portfolio and its interaction design decisions.
+- It is intentionally opinionated in layout and motion.
+- If you are browsing the source, the most relevant files are in `src/components` and `src/app`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No license is included at the moment. Please do not reuse the design, branding, or content as a template without permission.
