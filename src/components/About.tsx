@@ -8,10 +8,10 @@ import { useNav } from "./NavContext";
 gsap.registerPlugin(ScrollTrigger);
 
 const aboutParagraphs = [
-  "I've always been someone who overthinks how things work and how they could be improved.",
-  "That naturally led me into studying Computer Science at the University of Birmingham, where I've been building things properly, not just getting them to work.",
-  "I enjoy working across the stack, but what I care about most is how everything comes together in the end.",
-  "Right now, I'm focused on building products that feel simple, clear, and well put together.",
+  "I'm a Computer Science student at the University of Birmingham, working across both the theoretical and practical side of the subject.",
+  "Outside of that, I spend a lot of time building full-stack projects and learning independently, treating most problems as something I can figure out rather than something out of reach.",
+  "I tend to focus heavily on detail, and I'm rarely satisfied with something just working — I'll keep refining it until the quality matches the standard I have in mind.",
+  "For me, software is as much about how something is built as what it does, and I'm always pushing to improve both.",
 ];
 
 export default function About() {
@@ -153,7 +153,7 @@ export default function About() {
       id="about"
       className="about-section flex items-center h-[100svh] p-4 !pt-24 sm:p-12"
     >
-      <div className="relative max-w-lg mx-auto">
+      <div className="relative max-w-xl mx-auto">
         <h2 className="about-title font-clash text-5xl sm:text-6xl text-black text-center mb-8 sm:mb-12">
           about me.
         </h2>
