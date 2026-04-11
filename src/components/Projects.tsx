@@ -78,6 +78,13 @@ export default function Projects() {
   const activeIndexRef = useRef(activeIndex);
 
   useEffect(() => {
+    projects.forEach((p) => {
+      const img = new window.Image();
+      img.src = p.previewImage;
+    });
+  }, []);
+
+  useEffect(() => {
     activeIndexRef.current = activeIndex;
   }, [activeIndex]);
 
@@ -200,7 +207,7 @@ export default function Projects() {
 
     tl.fromTo(
       media,
-      { autoAlpha: 0, scale: 0.98, y: 30 * direction },
+      { autoAlpha: 0, y: 30 * direction },
       { autoAlpha: 1, duration: 0.45, ease: "power3.out", scale: 1, y: 0 },
     ).fromTo(
       children,
@@ -279,7 +286,6 @@ export default function Projects() {
       {
         autoAlpha: 0,
         y: -30 * direction,
-        scale: 0.98,
         duration: 0.25,
         ease: "power2.inOut",
       },
@@ -309,7 +315,7 @@ export default function Projects() {
       id="projects"
       className="projects-section flex items-center justify-center h-[100svh] p-4 pt-20 sm:pt-24 sm:p-12"
     >
-      <div className="projects-content sm:h-auto h-full flex flex-col sm:items-end sm:flex-row gap-2 sm:gap-24">
+      <div className="projects-content sm:max-h-[800px] h-full flex flex-col sm:items-end sm:flex-row gap-2 sm:gap-24">
         <div className="sm:w-[40%] flex flex-col gap-12 sm:gap-24">
           <h2 className="projects-title font-clash text-5xl sm:text-6xl border-b sm:border-none pb-4 sm:pb-0 mb-4 sm:mb-0 border-black/10">
             projects.
@@ -350,6 +356,7 @@ export default function Projects() {
               className="group relative aspect-[16/9] overflow-hidden rounded-2xl border border-black/5"
             >
               <Image
+                key={project.previewImage}
                 src={project.previewImage}
                 alt={`${project.name} preview`}
                 fill
