@@ -15,8 +15,8 @@ const projects = [
     description:
       "Full-stack AI learning platform that turns topics or study material into structured, reusable revision workflows. Designed to move beyond one-off AI responses into a connected learning system.",
     tags: ["Next.js", "PostgreSQL", "Azure AI", "Full-stack", "System design"],
-    href: "https://aicademy.bydiba.dev",
-    demo: "https://aicademy.bydiba.dev/demo",
+    href: "https://useaicademy.com",
+    demo: "https://useaicademy.com/demo",
     previewImage: "/aicademy.webp",
     bg: "#e8eef7",
   },
