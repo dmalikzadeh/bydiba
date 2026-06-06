@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     description:
       "Full-stack developer building polished, AI-powered web experiences.",
   },
+  verification: {
+    google: "yRnJdgK0hsm6Rgq_WXjvV_YekaWqPxz3vlE_sGsYdYg",
+  },
 };
 
 const jakarta = Plus_Jakarta_Sans({
