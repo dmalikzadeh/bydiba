@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const FALLBACK_REPLY_TO = "no-reply@bydiba.dev";
+const FALLBACK_REPLY_TO = "hello@useaicademy.com";
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 const requestLog = new Map<string, number[]>();
@@ -64,7 +64,7 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: "Diba <contact@bydiba.dev>",
+      from: "Diba <noreply@useaicademy.com>",
       to: "contact@bydiba.dev",
       replyTo: isValidEmail(from) ? from : FALLBACK_REPLY_TO,
       subject: `Portfolio: ${subject || "(no subject)"}`,
