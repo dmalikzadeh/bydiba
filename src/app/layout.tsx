@@ -5,31 +5,41 @@ import "./globals.css";
 import SmoothProvider from "@/components/SmoothProvider";
 import { NavProvider } from "@/components/NavContext";
 
+const siteName = "bydiba";
+const siteTitle = "bydiba | portfolio";
+const siteUrl = "https://bydiba.dev";
+const creatorName = "Diba Malikzadeh";
+const siteDescription =
+  "Portfolio of Diba Malikzadeh, a full-stack developer building polished, AI-powered web experiences.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bydiba.dev"),
+  metadataBase: new URL(siteUrl),
+  applicationName: siteName,
   title: {
-    default: "bydiba | portfolio",
+    default: siteTitle,
     template: "%s | bydiba",
   },
-  description:
-    "Full-stack developer building polished, AI-powered web experiences.",
+  description: siteDescription,
+  authors: [{ name: creatorName, url: siteUrl }],
+  creator: creatorName,
+  publisher: creatorName,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    type: "website",
+    type: "profile",
     url: "/",
-    siteName: "bydiba",
-    title: "bydiba | portfolio",
-    description:
-      "Full-stack developer building polished, AI-powered web experiences.",
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
     locale: "en_GB",
+    firstName: "Diba",
+    lastName: "Malikzadeh",
   },
   twitter: {
-    card: "summary",
-    title: "bydiba | portfolio",
-    description:
-      "Full-stack developer building polished, AI-powered web experiences.",
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
   },
   verification: {
     google: "yRnJdgK0hsm6Rgq_WXjvV_YekaWqPxz3vlE_sGsYdYg",

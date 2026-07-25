@@ -11,8 +11,8 @@ gsap.registerPlugin(ScrollSmoother, ScrollToPlugin, ScrollTrigger);
 
 const NAVIGATION = [
   { label: "Projects", href: "#projects", key: "projects", align: "top top" },
-  { label: "About", href: "#about", key: "about", align: "top top" },
-  { label: "Skills", href: "#skills", key: "skills", align: "top top" },
+  { label: "About", href: "#about", key: "about", align: "top+=1 top" },
+  { label: "Skills", href: "#skills", key: "skills", align: "top+=1 top" },
   { label: "Contact", href: "#contact", key: "contact", align: "top+=1 top" },
 ] as const;
 

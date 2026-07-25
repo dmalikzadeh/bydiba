@@ -161,9 +161,9 @@ export default function Skills() {
     <section id="skills" className="w-full">
       <div className="skills-intro h-[100svh] max-w-2xl mx-auto text-center flex flex-col items-center justify-center p-4 sm:p-12">
         <div className="relative space-y-6">
-          <h1 className="skills-title font-clash text-5xl sm:text-6xl text-black">
+          <h2 className="skills-title font-clash text-5xl sm:text-6xl text-black">
             skills & interests.
-          </h1>
+          </h2>
           <p className="skills-subtitle text-lg sm:text-xl text-black/80 font-light">
             There&apos;s{" "}
             <span className="italic text-black font-normal">always</span> more

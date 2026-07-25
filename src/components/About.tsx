@@ -7,11 +7,52 @@ import { useNav } from "./NavContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const emphasisClassName = "font-medium text-black/90";
+
 const aboutParagraphs = [
-  "I'm a Computer Science student at the University of Birmingham, working across both the theoretical and practical side of the subject.",
-  "Outside of that, I spend a lot of time building full-stack projects and learning independently, treating most problems as something I can figure out rather than something out of reach.",
-  "I tend to focus heavily on detail, and I'm rarely satisfied with something just working — I'll keep refining it until the quality matches the standard I have in mind.",
-  "For me, software is as much about how something is built as what it does, and I'm always pushing to improve both.",
+  {
+    id: "intro",
+    content: (
+      <>
+        Hi, I&apos;m{" "}
+        <strong className={emphasisClassName}>Diba Malikzadeh</strong> 👋
+      </>
+    ),
+  },
+  {
+    id: "education",
+    content: (
+      <>
+        I graduated from the{" "}
+        <strong className={emphasisClassName}>University of Birmingham</strong>{" "}
+        with <strong className={emphasisClassName}>first-class honours</strong>{" "}
+        in <strong className={emphasisClassName}>Computer Science</strong>. I
+        enjoy working across both the theoretical and practical sides of the
+        subject.
+      </>
+    ),
+  },
+  {
+    id: "projects",
+    content: (
+      <>
+        Outside of that, I spend a lot of time building{" "}
+        <strong className={emphasisClassName}>full-stack projects</strong> and
+        learning independently, treating most problems as something I can figure
+        out rather than something out of reach.
+      </>
+    ),
+  },
+  {
+    id: "detail",
+    content:
+      "I tend to focus heavily on detail, and I'm rarely satisfied with something just working — I'll keep refining it until the quality matches the standard I have in mind.",
+  },
+  {
+    id: "software",
+    content:
+      "For me, software is as much about how something is built as what it does, and I'm always pushing to improve both.",
+  },
 ];
 
 export default function About() {
@@ -158,10 +199,10 @@ export default function About() {
           about me.
         </h2>
 
-        <div className="space-y-4 sm:space-y-8 sm:text-lg text-black/70">
-          {aboutParagraphs.map((paragraph) => (
-            <p key={paragraph} className="about-paragraph">
-              {paragraph}
+        <div className="space-y-4 sm:space-y-6 sm:text-lg text-black/70">
+          {aboutParagraphs.map(({ id, content }) => (
+            <p key={id} className="about-paragraph">
+              {content}
             </p>
           ))}
         </div>
