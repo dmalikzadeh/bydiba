@@ -37,9 +37,10 @@ const aboutParagraphs = [
     content: (
       <>
         Outside of that, I spend a lot of time building{" "}
-        <strong className={emphasisClassName}>full-stack projects</strong> and
-        learning independently, treating most problems as something I can figure
-        out rather than something out of reach.
+        <strong className={emphasisClassName}>full-stack projects</strong> and{" "}
+        <strong className={emphasisClassName}>learning independently</strong>,
+        treating most problems as something I can figure out rather than
+        something out of reach.
       </>
     ),
   },
