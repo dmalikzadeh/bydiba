@@ -503,7 +503,7 @@ export default function Projects() {
 
             <div
               ref={contentRef}
-              className="p-2 mt-4 sm:mt-6 flex flex-1 flex-col justify-between gap-4 sm:gap-6"
+              className="p-2 mt-3 sm:mt-6 flex flex-1 flex-col justify-between gap-2 sm:gap-6"
             >
               <h3 className="font-clash text-2xl sm:text-3xl">
                 {project.name}
@@ -513,11 +513,11 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              <div className="mt-2 flex flex-wrap gap-2">
+              <div className="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono font-light rounded-full bg-black/3 px-3 py-1.5 text-[10px] sm:text-xs text-black/60 hover:-translate-y-[2px] hover:bg-black/5 hover:text-black transition duration-300"
+                    className="font-mono font-light rounded-full bg-black/3 px-2.5 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs text-black/60 hover:-translate-y-[2px] hover:bg-black/5 hover:text-black transition duration-300"
                   >
                     {tag}
                   </span>
