@@ -14,7 +14,7 @@ const projects = [
     name: "Aicademy",
     description:
       "Full-stack AI learning platform that turns topics or study material into structured, reusable revision workflows. Designed to move beyond one-off AI responses into a connected learning system.",
-    tags: ["Next.js", "PostgreSQL", "Azure AI", "Full-stack", "System design"],
+    tags: ["Next.js", "PostgreSQL", "Azure AI", "Full-stack"],
     href: "https://useaicademy.com",
     demo: "https://useaicademy.com/demo",
     previewImage: "/aicademy.webp",
