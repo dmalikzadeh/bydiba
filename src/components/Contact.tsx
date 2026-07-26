@@ -245,13 +245,13 @@ export default function Contact() {
           <h2 className="contact-title font-clash text-5xl sm:text-6xl mb-4 sm:mb-6">
             let&apos;s talk.
           </h2>
-          <p className="contact-subtitle max-w-sm text-lg sm:text-xl text-black/80 font-light ">
+          <p className="contact-subtitle max-w-sm sm:text-xl text-black/80 font-light">
             Have an idea, opportunity, or just want to connect? I&apos;d love to
             hear from you.
           </p>
         </div>
 
-        <div className="sm:hidden text-sm flex flex-col gap-3 items-end text-black/60">
+        <div className="sm:hidden text-xs flex flex-col gap-3 items-end text-black/60">
           <div className="mobile-link flex items-center gap-2">
             <a
               href="mailto:contact@bydiba.dev"
@@ -260,7 +260,7 @@ export default function Contact() {
               contact@bydiba.dev
             </a>
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -280,7 +280,7 @@ export default function Contact() {
               linkedin.com/in/dibamalikzadeh
             </a>
             <svg
-              className="h-5 w-5"
+              className="h-4 w-4"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -298,7 +298,7 @@ export default function Contact() {
               github.com/dmalikzadeh
             </a>
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -312,15 +312,15 @@ export default function Contact() {
           <div className="contact-window relative flex flex-col bg-[#fafafa] rounded-3xl w-full h-full border border-black/10 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
             <div className="border-b border-black/10 h-[60px] sm:h-[52px] flex items-center justify-between px-2">
               <div className="flex gap-2 px-2.5">
-                <span className="w-4 h-4 sm:w-3.5 sm:h-3.5 rounded-full bg-[#FF5F57]" />
-                <span className="w-4 h-4 sm:w-3.5 sm:h-3.5 rounded-full bg-[#FFBD2E]" />
-                <span className="w-4 h-4 sm:w-3.5 sm:h-3.5 rounded-full bg-[#28C840]" />
+                <span className="w-3.5 h-3.5 rounded-full bg-[#FF5F57]" />
+                <span className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E]" />
+                <span className="w-3.5 h-3.5 rounded-full bg-[#28C840]" />
               </div>
 
               <button
                 type="submit"
                 form="contact-form"
-                className="w-11 h-11 sm:w-9 sm:h-9 rounded-full flex items-center justify-center
+                className="w-9 h-9 rounded-full flex items-center justify-center
                           bg-[#0A84FF] hover:brightness-120 text-white
                           disabled:opacity-40 disabled:pointer-events-none
                           active:scale-90 cursor-pointer transition duration-300"
@@ -347,7 +347,7 @@ export default function Contact() {
                   </svg>
                 ) : (
                   <svg
-                    className="w-6 h-6 sm:w-5 sm:h-5"
+                    className="w-5 h-5"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     stroke="currentColor"
@@ -416,7 +416,7 @@ export default function Contact() {
               id="contact-form"
               noValidate
               onSubmit={handleSubmit}
-              className="pl-6 flex-1 flex flex-col sm:text-sm text-black/70"
+              className="pl-4 sm:pl-6 flex-1 flex flex-col text-sm text-black/70"
             >
               <div
                 aria-hidden="true"

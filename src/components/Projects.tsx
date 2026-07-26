@@ -503,7 +503,7 @@ export default function Projects() {
 
             <div
               ref={contentRef}
-              className="p-2 mt-3 sm:mt-6 flex flex-1 flex-col justify-between gap-2 sm:gap-6"
+              className="p-1 sm:p-2 mt-3 sm:mt-6 flex flex-1 flex-col justify-between gap-2 sm:gap-6"
             >
               <h3 className="font-clash text-2xl sm:text-3xl">
                 {project.name}

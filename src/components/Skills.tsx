@@ -30,7 +30,7 @@ export default function Skills() {
         scrollTrigger: {
           trigger: ".skills-intro",
           start: "top top",
-          end: "+=100%",
+          end: "+=95%",
           toggleActions: "play none none reverse",
           pin: true,
           pinSpacing: false,
@@ -164,7 +164,7 @@ export default function Skills() {
           <h2 className="skills-title font-clash text-5xl sm:text-6xl text-black">
             skills & interests.
           </h2>
-          <p className="skills-subtitle text-lg sm:text-xl text-black/80 font-light">
+          <p className="skills-subtitle sm:text-xl text-black/80 font-light">
             There&apos;s{" "}
             <span className="italic text-black font-normal">always</span> more
             to learn. I enjoy exploring different parts of development and
@@ -199,7 +199,7 @@ export default function Skills() {
 
       <div className="skills-cards flex flex-col sm:flex-row gap-4 w-full p-4 sm:p-12">
         <div className="flex-1 flex flex-col gap-4">
-          <div className="skill-card card-1 flex-2 flex flex-col items-center justify-between text-center p-8 sm:p-12 bg-[#F1EFEA] rounded-4xl">
+          <div className="skill-card card-1 flex-2 flex flex-col items-center justify-between text-center p-8 sm:p-12 bg-[#F1EFEA] rounded-3xl sm:rounded-4xl">
             <div className="card-halo relative w-32 h-32 sm:w-60 sm:h-60 flex items-center justify-center">
               <div className="absolute w-full h-full rounded-full bg-[#F2B8A0]/20 blur-3xl" />
               <Image
@@ -228,7 +228,7 @@ export default function Skills() {
               <h2 className="card-title text-xl sm:text-2xl font-clash text-black/80 mb-2">
                 AI & Intelligent Features
               </h2>
-              <p className="card-content text-sm sm:text-base text-black/60 font-light text-balance">
+              <p className="card-content text-xs sm:text-base text-black/60 font-light text-balance">
                 Artificial intelligence is one of my main interests, and I enjoy
                 building with it in ways that go beyond novelty and focus on
                 real, user-facing value.
@@ -236,7 +236,7 @@ export default function Skills() {
             </div>
           </div>
 
-          <div className="skill-card card-3 flex-1 flex flex-col items-center justify-between gap-8 text-center p-8 sm:p-12 bg-[#F1EFEA] rounded-4xl">
+          <div className="skill-card card-3 flex-1 flex flex-col items-center justify-between gap-8 text-center p-8 sm:p-12 bg-[#F1EFEA] rounded-3xl sm:rounded-4xl">
             <div className="flex items-center gap-3">
               <span className="card-icon">
                 <Image
@@ -262,7 +262,7 @@ export default function Skills() {
               <h2 className="card-title text-xl sm:text-2xl font-clash text-black/80 mb-2">
                 Systems & Data
               </h2>
-              <p className="card-content text-sm sm:text-base text-black/60 font-light text-balance">
+              <p className="card-content text-xs sm:text-base text-black/60 font-light text-balance">
                 I work across the backend too: designing APIs, structuring data,
                 and building systems that are reliable, scalable, and built to
                 support real applications.
@@ -272,7 +272,7 @@ export default function Skills() {
         </div>
 
         <div className="flex-1 flex flex-col gap-4">
-          <div className="skill-card card-2 flex-1 flex flex-col items-center justify-between gap-8 text-center p-8 sm:p-12 bg-[#F1EFEA] rounded-4xl">
+          <div className="skill-card card-2 flex-1 flex flex-col items-center justify-between gap-8 text-center p-8 sm:p-12 bg-[#F1EFEA] rounded-3xl sm:rounded-4xl">
             <div className="flex items-center gap-3">
               <span className="card-icon">
                 <Image
@@ -317,7 +317,7 @@ export default function Skills() {
               <h2 className="card-title text-xl sm:text-2xl font-clash text-black/80 mb-2">
                 Interfaces & Experience
               </h2>
-              <p className="card-content text-sm sm:text-base text-black/60 font-light text-balance">
+              <p className="card-content text-xs sm:text-base text-black/60 font-light text-balance">
                 I design and build interfaces that feel intuitive and polished,
                 focusing on responsiveness, smooth interactions, and the small
                 details that elevate the overall experience.
@@ -325,7 +325,7 @@ export default function Skills() {
             </div>
           </div>
 
-          <div className="skill-card card-4 flex-1 flex flex-col items-center justify-between text-center p-8 sm:p-12 bg-[#F1EFEA] rounded-4xl">
+          <div className="skill-card card-4 flex-1 flex flex-col items-center justify-between text-center p-8 sm:p-12 bg-[#F1EFEA] rounded-3xl sm:rounded-4xl">
             <Image
               src="/skills/github-kanban.webp"
               alt=""
@@ -338,7 +338,7 @@ export default function Skills() {
               <h2 className="card-title text-xl sm:text-2xl font-clash text-black/80 mb-2">
                 Product & Collaboration
               </h2>
-              <p className="card-content text-sm sm:text-base text-black/60 font-light text-balance">
+              <p className="card-content text-xs sm:text-base text-black/60 font-light text-balance">
                 I work well within teams and naturally take on leadership
                 responsibilities, helping organise work, support others, and
                 take ownership of features from idea through to final delivery.
