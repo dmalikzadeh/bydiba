@@ -311,10 +311,46 @@ export default function Contact() {
         <div className="z-10 relative flex-1">
           <div className="contact-window relative flex flex-col bg-[#fafafa] rounded-3xl w-full h-full border border-black/10 shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
             <div className="border-b border-black/10 h-[60px] sm:h-[52px] flex items-center justify-between px-2">
-              <div className="flex gap-2 px-2.5">
-                <span className="w-3.5 h-3.5 rounded-full bg-[#FF5F57]" />
-                <span className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E]" />
-                <span className="w-3.5 h-3.5 rounded-full bg-[#28C840]" />
+              <div className="group flex gap-2 px-2.5">
+                <span
+                  aria-hidden="true"
+                  className="w-[14px] h-[14px] flex items-center justify-center rounded-full border-[0.5px] border-[#E0443E] bg-[#FF5F56] text-[#560000]/80"
+                >
+                  <svg
+                    className="w-[12px] h-[12px] opacity-0 group-hover:opacity-100"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="m14.328 11.974 4.197-4.198a1.62 1.62 0 0 0-1.167-2.691 1.62 1.62 0 0 0-1.124.403l-4.201 4.193-4.209-4.206A1.624 1.624 0 0 0 5.528 7.77l4.21 4.205-4.197 4.196a1.622 1.622 0 1 0 2.292 2.29l4.2-4.194 4.196 4.193a1.624 1.624 0 0 0 2.296-2.293z" />
+                  </svg>
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="w-[14px] h-[14px] flex items-center justify-center rounded-full border-[0.5px] border-[#DEA123] bg-[#FFBD2E] text-[#634700]/80"
+                >
+                  <svg
+                    className="w-[12px] h-[12px] opacity-0 group-hover:opacity-100"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M18 14H6a2 2 0 1 1 0-4h12a2 2 0 0 1 0 4" />
+                  </svg>
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="w-[14px] h-[14px] flex items-center justify-center rounded-full border-[0.5px] border-[#1AAB29] bg-[#27C93F] text-[#005300]/80"
+                >
+                  <svg
+                    className="w-[12px] h-[12px] opacity-0 group-hover:opacity-100"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M6.007 6.507a.5.5 0 0 1 .5-.5L14.669 6a.5.5 0 0 1 .354.854l-8.17 8.169A.5.5 0 0 1 6 14.669zM17.157 17.828a.5.5 0 0 0 .5-.5l.006-8.162a.5.5 0 0 0-.853-.354l-8.17 8.169a.5.5 0 0 0 .355.854z" />{" "}
+                  </svg>
+                </span>
               </div>
 
               <button
