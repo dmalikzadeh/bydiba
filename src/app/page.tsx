@@ -5,6 +5,7 @@ import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Creative from "@/components/Creative";
 import Header from "@/components/Header";
+import CvButton from "@/components/CvButton";
 
 const siteUrl = "https://bydiba.dev";
 const personId = `${siteUrl}/#diba-malikzadeh`;
@@ -86,6 +87,8 @@ export default function Home() {
           <Creative />
         </div>
       </main>
+
+      <CvButton />
     </>
   );
 }

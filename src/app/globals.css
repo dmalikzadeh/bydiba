@@ -113,3 +113,26 @@ button {
   -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 80%);
   mask-image: linear-gradient(to bottom, black 40%, transparent 80%);
 }
+
+/* mac os scrollbar */
+.cv-scroller::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.cv-scroller::-webkit-scrollbar-track,
+.cv-scroller::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.cv-scroller::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  background-clip: content-box;
+}
+
+.cv-scroller::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.45);
+  background-clip: content-box;
+}

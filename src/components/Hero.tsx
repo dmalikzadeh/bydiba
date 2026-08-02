@@ -4,6 +4,7 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ScrollSmoother from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CvFile from "./CvFile";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -30,6 +31,12 @@ export default function Hero() {
       gsap.set(".hero-subtitle", { autoAlpha: 0, y: 20 });
       gsap.set(".hero-cta", { autoAlpha: 0, y: 16 });
       gsap.set(".hero-link", { autoAlpha: 0, y: 12 });
+      gsap.set(".hero-file", {
+        autoAlpha: 0,
+        scale: 0.6,
+        y: -18,
+        transformOrigin: "50% 50%",
+      });
       gsap.set(".hero-glow", { scale: 0.88, autoAlpha: 0 });
       gsap.set(".hero-word", { y: 60, autoAlpha: 0 });
       gsap.set(".hero-flower-container", { width: 0 });
@@ -90,6 +97,18 @@ export default function Hero() {
           duration: 0.5,
         },
         "-=0.4",
+      );
+
+      introTl.to(
+        ".hero-file",
+        {
+          autoAlpha: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "back.out(2)",
+        },
+        "-=0.2",
       );
 
       // scroll animation
@@ -162,6 +181,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <CvFile />
 
       <div className="z-10 flex h-full w-full flex-col">
         <div className="flex flex-1 items-center">
