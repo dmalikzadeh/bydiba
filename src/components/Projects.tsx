@@ -22,12 +22,12 @@ const projects = [
   },
   {
     number: "02",
-    name: "MotorHub",
+    name: "MotorArc",
     description:
-      "A full-stack automotive website built for a client, with a custom admin panel for managing listings, including adding, editing and removing vehicles.",
+      "A full-stack dealership platform built for a client, with a secure admin panel for managing vehicles, images and enquiries, plus auto-generated brochures and transactional email.",
     tags: ["Next.js", "Admin panel", "CRUD", "Database"],
-    href: "https://motors.bydiba.dev",
-    previewImage: "/motorhub.webp",
+    href: "https://motorarc.co.uk",
+    previewImage: "/motorarc.webp",
     bg: "#EDE9DD",
   },
   {
