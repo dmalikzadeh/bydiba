@@ -279,8 +279,8 @@ export default function PortfolioCv() {
             <p className="mt-5 max-w-[570px] text-[14px] leading-[1.78] text-black/60">
               I&apos;m a software engineer working across full-stack systems,
               applied AI and product design. I&apos;ve shipped a live AI
-              revision platform, delivered production software for a paying
-              client, led a seven-person team and taught a module I had just
+              revision platform, delivered production software for paying
+              clients, led a seven-person team and taught a module I had just
               scored 100% in. I care about reliable outputs, clear interfaces
               and the unglamorous engineering that makes a product trustworthy.
             </p>
