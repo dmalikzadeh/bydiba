@@ -27,27 +27,15 @@ export default function CvPdfPage() {
           margin: 0;
         }
 
-        /* Keep gradients, tints and the dark band in the printed output. */
         *, *::before, *::after {
           -webkit-print-color-adjust: exact !important;
           print-color-adjust: exact !important;
         }
 
-        /*
-         * On the site the CV is viewed in a wide window, so the title's
-         * clamp(3.2rem, 7.5vw, 4.25rem) always resolves to its 4.25rem cap.
-         * At A4 width 7.5vw would fall below that, so pin it to match.
-         */
         article h1 {
           font-size: 4.25rem !important;
         }
 
-        /*
-         * Deliberate page-by-page rhythm. Page one has enough room for the
-         * profile and evidence sections to keep their full on-site breathing
-         * space; later pages use measured print spacing rather than one global
-         * compression value.
-         */
         article > div > section:nth-child(2) {
           padding-top: 44px !important;
           padding-bottom: 44px !important;
@@ -74,9 +62,7 @@ export default function CvPdfPage() {
           padding-bottom: 18px !important;
         }
 
-        /* The cover keeps its full on-site proportions. */
-
-        /* Selected work: project rows and internal spacing */
+        /* Selected work */
         article > div > section:nth-child(4) article {
           padding-top: 4px !important;
           padding-bottom: 4px !important;
@@ -136,7 +122,6 @@ export default function CvPdfPage() {
           padding-top: 16px !important;
         }
 
-        /* Never split an individual entry, stat or column across a page. */
         article section article,
         article dl > div,
         article footer dl > div {
@@ -144,13 +129,6 @@ export default function CvPdfPage() {
           page-break-inside: avoid;
         }
 
-        /*
-         * Deliberate page boundaries, so each page ends on a whole section
-         * instead of clipping one mid-way.
-         *   1 · header, profile, evidence
-         *   2 · selected work, how I work
-         *   3 · experience, technical practice, colophon
-         */
         article > div > section:nth-child(4),
         article > div > section:nth-child(6) {
           break-before: page;

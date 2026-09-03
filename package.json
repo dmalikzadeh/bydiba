@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "cv:pdf": "node scripts/generate-cv-pdf.mjs"
+    "cv:pdf": "node scripts/generate-cv-pdf.mjs",
+    "showcase:pdf": "node scripts/generate-showcase-pdf.mjs"
   },
   "dependencies": {
     "gsap": "^3.13.0",

@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import ScrollSmoother from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CvFile from "./CvFile";
+import ShowcaseFile from "./ShowcaseFile";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -183,6 +184,7 @@ export default function Hero() {
       </div>
 
       <CvFile />
+      <ShowcaseFile />
 
       <div className="z-10 flex h-full w-full flex-col">
         <div className="flex flex-1 items-center">
