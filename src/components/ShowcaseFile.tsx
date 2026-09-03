@@ -40,8 +40,7 @@ export default function ShowcaseFile() {
       preview="/preview-showcase.webp"
       pageCount={10}
       paperWidth={794}
-      contentScale={768 / 794}
-      contentClassName="[&>div]:gap-0 [&>div]:py-0 [&_article]:shadow-none"
+      contentScale={700 / 794}
       home={showcaseHome}
       infoRows={showcaseInfo}
     >

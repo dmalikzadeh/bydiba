@@ -21,7 +21,7 @@ const cvInfo: DesktopFileProps["infoRows"] = ({ name, pages }) => [
   ],
   [
     ["Author", "Diba Malikzadeh"],
-    ["Classification", "First Class · 75.6%"],
+    ["Classification", "First Class · 76%"],
     ["Typeface", "Clash Display · Jakarta"],
     ["Built With", "Next.js · Tailwind · GSAP"],
     ["Colour Profile", "Warm"],
@@ -39,6 +39,8 @@ export default function CvFile() {
       noun="CV"
       preview="/preview-cv.webp"
       pageCount={3}
+      paperWidth={794}
+      contentScale={700 / 794}
       home={cvHome}
       infoRows={cvInfo}
     >

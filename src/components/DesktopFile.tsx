@@ -24,7 +24,6 @@ export type DesktopFileProps = {
   pageCount: number;
   paperWidth?: number;
   contentScale?: number;
-  contentClassName?: string;
   home: (bounds: { width: number; height: number; self: number }) => Position;
   infoRows: (context: { name: string; pages: number }) => [string, string][][];
   children: ReactNode;
@@ -43,6 +42,7 @@ const EDGE = 12;
 const WINDOW_ANIMATION_MS = 300;
 const BACKDROP_ANIMATION_MS = 180;
 const REDUCED_MOTION_MS = 140;
+const WINDOW_RADIUS = "24px";
 const WINDOW_EASING = "cubic-bezier(0.32, 0.72, 0, 1)";
 const WINDOW_SHADOW =
   "0 28px 80px rgba(0,0,0,0.24), 0 3px 12px rgba(0,0,0,0.12)";
@@ -162,7 +162,6 @@ export default function DesktopFile({
   pageCount,
   paperWidth = 768,
   contentScale = 1,
-  contentClassName,
   home: homeFor,
   infoRows,
   children,
@@ -697,7 +696,6 @@ export default function DesktopFile({
             pageCount={pageCount}
             paperWidth={paperWidth}
             contentScale={contentScale}
-            contentClassName={contentClassName}
             infoRows={infoRows}
             getSourceRect={getWindowSourceRect}
             onClosed={closeWindow}
@@ -823,7 +821,6 @@ function FileWindow({
   pageCount,
   paperWidth,
   contentScale,
-  contentClassName,
   infoRows,
   getSourceRect,
   onClosed,
@@ -835,7 +832,6 @@ function FileWindow({
   pageCount: number;
   paperWidth: number;
   contentScale: number;
-  contentClassName?: string;
   infoRows: (context: { name: string; pages: number }) => [string, string][][];
   getSourceRect: () => DOMRect | null;
   onClosed: () => void;
@@ -1025,13 +1021,13 @@ function FileWindow({
         {
           transform: sourceTransform,
           opacity: morphing ? 0.12 : 0,
-          borderRadius: morphing ? "6px" : "14px",
+          borderRadius: morphing ? "6px" : WINDOW_RADIUS,
           boxShadow: morphing ? SOURCE_SHADOW : WINDOW_SHADOW,
         },
         {
           transform: "translate3d(0, 0, 0) scale3d(1, 1, 1)",
           opacity: 1,
-          borderRadius: "14px",
+          borderRadius: WINDOW_RADIUS,
           boxShadow: WINDOW_SHADOW,
         },
       ],
@@ -1277,7 +1273,7 @@ function FileWindow({
           className="cv-scroller flex-1 overflow-auto overscroll-contain"
         >
           <div
-            className={`mt-[80px] mb-[60px] mx-auto bg-white border-black/4 shadow-[0_1px_3px_rgba(0,0,0,0.1),0_1px_1px_rgba(0,0,0,0.05)] ${contentClassName ?? ""}`}
+            className="mt-[80px] mx-auto"
             style={{
               width: paperWidth,
               maxWidth: zoom > 1 ? "none" : "100%",

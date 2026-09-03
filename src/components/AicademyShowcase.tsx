@@ -99,7 +99,7 @@ const links: [string, string, string][] = [
 ];
 
 const PAGE =
-  "relative w-[794px] h-[1123px] overflow-hidden flex flex-col break-before-page bg-[#fbfcfe] text-[#16212e] shadow-[0_2px_28px_rgba(2,48,71,0.15)] print:shadow-none";
+  "relative w-[794px] h-[1123px] overflow-hidden flex flex-col break-before-page bg-[#fbfcfe] text-[#16212e] shadow-[0_0_1px_rgba(0,0,0,0.09),0_1px_5px_rgba(0,0,0,0.10)] print:shadow-none";
 const LABEL =
   "mt-1.5 font-mono text-[9.5px] leading-[1.45] font-extrabold tracking-[0.17em] text-[#12708d] uppercase";
 
@@ -124,7 +124,7 @@ function PageTitle({ n, title }: { n: string; title: string }) {
 function Foot({ page, dark }: { page: number; dark?: boolean }) {
   return (
     <div
-      className={`invisible flex shrink-0 justify-between border-t pt-2.5 pb-3.5 font-mono text-[7.5px] font-semibold tracking-[0.14em] uppercase print:visible ${
+      className={`flex shrink-0 justify-between border-t pt-2.5 pb-3.5 font-mono text-[7.5px] font-semibold tracking-[0.14em] uppercase ${
         dark
           ? "border-[#eaf3f8]/15 text-[#eaf3f8]/45"
           : "border-[#023047]/10 px-10 text-[#023047]/30"
@@ -830,9 +830,9 @@ function FeatureCard({
 
 export default function AicademyShowcase() {
   return (
-    <div className="flex flex-col items-center gap-8 py-8 print:block print:gap-0 print:py-0">
+    <div className="flex flex-col items-center gap-4 print:block print:gap-0">
       {/* ═══════════ cover ═══════════ */}
-      <article className="relative flex h-[1123px] w-[794px] flex-col overflow-hidden bg-[#022c41] text-[#eaf3f8] shadow-[0_2px_28px_rgba(2,48,71,0.15)] print:shadow-none">
+      <article className="relative flex h-[1123px] w-[794px] flex-col overflow-hidden bg-[#022c41] text-[#eaf3f8] shadow-[0_0_1px_rgba(0,0,0,0.09),0_1px_5px_rgba(0,0,0,0.10)] print:shadow-none">
         <figure className="h-[430px] w-full shrink-0 overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -1390,7 +1390,7 @@ export default function AicademyShowcase() {
       </Page>
 
       {/* ═══════════ 09 · close ═══════════ */}
-      <article className="relative flex h-[1123px] w-[794px] flex-col overflow-hidden bg-[#022c41] text-[#eaf3f8] shadow-[0_2px_28px_rgba(2,48,71,0.15)] print:shadow-none">
+      <article className="relative flex h-[1123px] w-[794px] flex-col overflow-hidden bg-[#022c41] text-[#eaf3f8] shadow-[0_0_1px_rgba(0,0,0,0.09),0_1px_5px_rgba(0,0,0,0.10)] print:shadow-none">
         <div className="pointer-events-none absolute -top-[120px] right-[-160px] size-[440px] rounded-full bg-[#219ebc]/20 blur-[110px]" />
         <div className="pointer-events-none absolute bottom-[-220px] left-[-140px] size-[400px] rounded-full bg-[#8ecae6]/10 blur-[110px]" />
 

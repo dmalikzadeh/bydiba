@@ -1,26 +1,53 @@
 import Image from "next/image";
 
 const proofPoints = [
-  { value: "First Class", label: "BSc Computer Science · 75.6% average" },
-  { value: "100%", label: "Functional Programming · then taught it" },
-  { value: "In production", label: "Client platform live and maintained" },
-  { value: "18 users", label: "Aicademy · two rounds of research" },
-  { value: "7-person team", label: "Led to 88% · Team Software Project" },
+  { value: "First Class", label: "BSc Computer Science · 76% average" },
+  { value: "100%", label: "Functional Programming Module · UGTA" },
+  { value: "694 lessons", label: "Published free on Aicademy" },
+  { value: "In production", label: "Client platform · Live and maintained" },
+  { value: "7-person team", label: "Team lead · Graded 88%" },
   { value: "A*A*A", label: "Maths · Further Maths · Computer Science" },
 ];
 
 const principles = [
   {
-    title: "Build it, then let real people break it.",
-    body: "Aicademy went through two rounds of user research. The second version exists because the first one was wrong in places I could not see on my own.",
+    title: "I would rather say no than fake a yes.",
+    body: (
+      <>
+        My first production site was for a tyre service. A rival gave blanket
+        availability for any postcode, and I was told to do the same. I used{" "}
+        <span className="font-medium text-white/80">real postcodes</span>, drew{" "}
+        <span className="font-medium text-white/80">a coverage boundary</span>,
+        and <span className="font-medium text-white/80">let it say no</span>. It
+        still brings in calls.
+      </>
+    ),
   },
   {
-    title: "If I cannot explain it, I do not know it.",
-    body: "I scored 100% in Functional Programming, then spent a term teaching it. Explaining recursion to someone else is where you find out what you actually understood.",
+    title: "I have started from zero every time.",
+    body: (
+      <>
+        I had not written{" "}
+        <span className="font-medium text-white/80">Java</span> when I led my
+        first full stack project. Or{" "}
+        <span className="font-medium text-white/80">Next.js</span> when I built
+        the AI interviewer. Or an{" "}
+        <span className="font-medium text-white/80">authentication system</span>{" "}
+        when I planned Aicademy. I expect the next one to be the same.
+      </>
+    ),
   },
   {
-    title: "Most of what I know, I taught myself.",
-    body: "Unfamiliar tooling is a scheduling problem, not a barrier. I would rather read the docs and ship something rough than wait until I feel ready.",
+    title: "I get to the pattern before I know its name.",
+    body: (
+      <>
+        I split InterviewBot into a planner, an interviewer and a reviewer.
+        Aicademy breaks an upload into sections and assigns each to the lessons
+        that need it. I built both before I connected them to{" "}
+        <span className="font-medium text-white/80">multi-agent workflows</span>{" "}
+        and <span className="font-medium text-white/80">RAG</span>.
+      </>
+    ),
   },
 ];
 
@@ -50,7 +77,7 @@ const supportingProjects: SupportingProject[] = [
   {
     name: "MotorArc",
     descriptor: "Production platform · paying client",
-    stack: "Next.js · TypeScript · PostgreSQL · Cloudinary · Resend",
+    stack: "Next.js · TypeScript · Postgres · Cloudinary · Resend",
     summary:
       "Delivered a live dealership platform with an authenticated admin area, vehicle and image management, enquiry capture, PDF brochures and transactional email.",
     href: "https://motorarc.co.uk",
@@ -59,8 +86,7 @@ const supportingProjects: SupportingProject[] = [
   {
     name: "InterviewBot",
     descriptor: "Voice-driven AI interview coach",
-    stack:
-      "Next.js · TypeScript · Azure OpenAI · Speech-to-text · Text-to-speech · GSAP",
+    stack: "Next.js · TypeScript · Azure OpenAI · STT/TTS · GSAP",
     summary:
       "Built a spoken mock-interview tool that listens, transcribes and responds in real time, then returns structured feedback on the answer rather than a generic score.",
     href: "https://interview.bydiba.dev",
@@ -68,10 +94,10 @@ const supportingProjects: SupportingProject[] = [
   },
   {
     name: "Taskado",
-    descriptor: "Seven-person team lead · 88%",
-    stack: "Angular · Spring Boot · Spring Security · PostgreSQL · Docker",
+    descriptor: "7-person team lead · 88%",
+    stack: "Angular · Spring Boot · Spring Security · Postgres · Docker",
     summary:
-      "Led delivery of a full-stack productivity platform, built the task-management flow across the frontend and API, and owned the Git workflow, integration and deployment.",
+      "Led a seven-person team, delivered around 44% of commits across the front end and API, and introduced branch protection and review after broken code reached main.",
   },
   {
     name: "Bug Report Classification",
@@ -84,8 +110,8 @@ const supportingProjects: SupportingProject[] = [
 
 const technicalPractice = [
   {
-    label: "Languages",
-    value: "TypeScript, JavaScript, Python, Java, SQL, Haskell and C",
+    label: "Programming",
+    value: "TypeScript, JavaScript, Python, Java, C#, SQL, Haskell and C",
   },
   {
     label: "Product engineering",
@@ -95,33 +121,60 @@ const technicalPractice = [
   {
     label: "AI & machine learning",
     value:
-      "Azure OpenAI, LLM application design, document grounding, strict output contracts, STT/TTS and scikit-learn",
+      "Azure OpenAI, LLM application design, RAG, structured outputs, STT/TTS and scikit-learn",
   },
   {
     label: "Data & access",
     value:
-      "PostgreSQL, MySQL, Prisma, Supabase, Auth.js, OAuth, JWT and role-based access control",
+      "Postgres, Prisma, Supabase, Auth.js, OAuth, JWT and relational data modelling",
   },
   {
     label: "Delivery",
     value:
-      "Git, GitHub Actions, Docker, Vercel, Cloudinary, Resend, Linux and CI quality gates",
+      "Git, GitHub Actions, Docker, Vercel, Stripe, Cloudinary, Resend and CI quality gates",
   },
   {
     label: "Design practice",
     value:
-      "Figma, responsive interface design, accessibility, user research and interaction polish",
+      "Figma, responsive interface design, accessibility and user research",
   },
 ];
+
+const PAGE =
+  "relative flex h-[1123px] w-[794px] shrink-0 flex-col overflow-hidden break-before-page bg-[#fffdf9] text-[#28231f] shadow-[0_0_1px_rgba(0,0,0,0.09),0_1px_5px_rgba(0,0,0,0.10)] first:break-before-auto print:shadow-none";
+
+function Page({ children }: { children: React.ReactNode }) {
+  return <article className={PAGE}>{children}</article>;
+}
+
+function Foot({ page, dark }: { page: number; dark?: boolean }) {
+  return (
+    <div
+      className={`flex shrink-0 justify-between border-t px-10 pt-2.5 pb-3.5 font-mono text-[7.5px] font-semibold tracking-[0.14em] uppercase ${
+        dark
+          ? "border-[#fdf6f0]/15 text-[#fdf6f0]/45"
+          : "border-[#312923]/10 text-[#312923]/30"
+      }`}
+    >
+      <span>Diba Malikzadeh · Portfolio CV</span>
+      <span>
+        <a href="https://bydiba.dev" target="_blank" rel="noreferrer">
+          bydiba.dev
+        </a>{" "}
+        · {String(page).padStart(2, "0")} / 03
+      </span>
+    </div>
+  );
+}
 
 export default function PortfolioCv() {
   return (
     <article
       aria-label="Diba Malikzadeh portfolio CV"
-      className="bg-[#fffdf9] font-jakarta text-[#28231f] selection:bg-[#efb8aa] selection:text-black"
+      className="flex flex-col items-center gap-4 print:block print:gap-0 text-[#28231f] selection:bg-[#efb8aa] selection:text-black"
     >
-      <div className="mx-auto min-h-full max-w-[790px] bg-[#fffdf9] shadow-[0_0_0_1px_rgba(57,43,35,0.05)]">
-        <header className="relative min-h-[555px] overflow-hidden bg-[linear-gradient(118deg,#f6c8be_0%,#f9d8c0_42%,#f7e6d5_72%,#eddae4_100%)] px-10 pt-11">
+      <Page>
+        <header className="relative flex grow shrink-0 flex-col overflow-hidden bg-[linear-gradient(118deg,#f6c8be_0%,#f9d8c0_42%,#f7e6d5_72%,#eddae4_100%)] px-10 pt-11">
           <div
             aria-hidden="true"
             className="absolute -top-16 -right-10 size-52 rounded-full bg-white/40 blur-3xl"
@@ -131,40 +184,51 @@ export default function PortfolioCv() {
             className="absolute -bottom-24 left-[28%] size-48 rounded-full bg-[#f59d76]/20 blur-3xl"
           />
 
-          <div className="relative z-10 flex min-h-[500px] w-[59%] flex-col">
+          <div className="relative z-10 flex w-[59%] grow flex-col">
             <div className="mb-7 flex items-center gap-3 font-mono text-[8px] font-bold tracking-[0.2em] text-black/40 uppercase">
               <span>Portfolio CV / 2026</span>
               <span className="h-px w-7 bg-black/20" />
               <span>Online edition</span>
             </div>
 
-            <h1 className="max-w-[410px] font-clash text-[clamp(3.2rem,7.5vw,4.25rem)] leading-[0.84] font-medium tracking-[-0.065em] text-[#211d1a]">
+            <h1 className="max-w-[410px] font-clash text-[68px] leading-[0.84] font-medium tracking-[-0.065em] text-[#211d1a]">
               Diba
               <br />
               Malikzadeh
             </h1>
 
-            <p className="mt-8 max-w-[340px] font-clash text-[22px] leading-[1.08] font-medium tracking-[-0.025em] text-[#8e3f2e]">
-              Software engineer building AI-powered products that hold up in the
-              real world.
+            <p className="mt-8 max-w-[360px] font-clash text-[22px] leading-[1.08] tracking-[-0.025em] text-[#8e3f2e]">
+              Full-stack and AI software engineer who ships real products and
+              keeps refining them.
             </p>
 
-            <div className="mt-6 inline-flex w-fit items-center gap-2 font-mono text-[9px] font-bold tracking-[0.08em] text-[#8f3e2c] uppercase">
-              <span className="size-1.5 rounded-full bg-[#d66145]" />
+            <div className="mt-12 inline-flex w-fit items-center gap-2 font-mono text-[9px] tracking-[0.08em] text-[#8f3e2c] uppercase">
+              <svg
+                className="w-3 h-3"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M9.67.127C8.457.584 7.537 1.603 7.106 2.965c-.099.314-.149.729-.174 1.462-.044 1.193.068 1.998.44 3.115l.229.694-.585-.198c-.997-.343-1.724-.456-2.931-.457-1.038-.004-1.12.007-1.623.205-.95.371-1.605 1.018-2.048 2.01-.52 1.172-.552 2.34-.088 3.253.212.411.957 1.218 1.42 1.539.418.288 1.406.719 2.194.956.881.267 2.578.24 3.845-.056l.202-.05-.123.19c-.065.106-.148.19-.18.19-.099 0-1.016 1.154-1.465 1.843-.77 1.188-1.124 2.103-1.193 3.087-.058.837.128 1.425.657 2.077.455.557 1.055.902 1.918 1.097.951.218 2.143-.027 3.13-.64.475-.293 1.972-1.708 1.972-1.86 0-.043.091-.196.203-.34.57-.734 1.176-2.161 1.267-2.973l.049-.425.241.418c.704 1.21 2.104 2.56 3.285 3.166.722.371 1.13.478 1.77.475 1.821-.018 3.623-1.595 3.808-3.335.036-.367-.137-1.511-.278-1.836q-.09-.209-.172-.424c-.135-.355-.976-1.528-1.473-2.05-.78-.82-2.176-1.63-3.286-1.91l-.628-.157.47-.09c2.568-.479 5.325-2.564 5.905-4.462.503-1.652-.44-3.866-1.975-4.635-.453-.229-.479-.232-1.451-.232-1.087 0-1.299.049-2.297.529-.898.43-1.342.73-1.92 1.291a9.2 9.2 0 0 0-1.498 1.915l-.244.413-.037-.31c-.019-.173-.074-.669-.119-1.103-.219-2.059-.936-3.88-1.834-4.665-.549-.474-.998-.65-1.764-.676-.538-.02-.747.005-1.055.121m.48.82c-.398.111-1.046.5-1.329.8-.319.338-.698 1.03-.87 1.583-.13.417-.156.661-.149 1.406.018 1.776.635 3.593 1.495 4.394.393.366 1.38 1.004 1.554 1.004.053 0 .212-.097.355-.213.417-.34.893-.518 1.5-.56.302-.021.59-.065.64-.097.119-.074.195-.83.2-1.99.014-3.269-.988-5.885-2.421-6.318-.42-.128-.538-.128-.974-.008m9.49 2.596c-.503.118-1.837.773-2.347 1.158-1.057.789-2.168 2.53-2.694 4.218l-.217.695.297.302c.29.295.634.928.637 1.165.002.369 2.17.149 3.63-.37 1.078-.38 2.295-1.212 3.174-2.166 1.07-1.158 1.252-2.124.647-3.435-.288-.618-.864-1.246-1.347-1.464-.42-.19-1.205-.237-1.78-.103M3.558 8.517c-.08.02-.309.069-.51.111a3 3 0 0 0-.587.184c-.224.115-.915.754-.915.85 0 .029-.064.143-.145.256-.469.673-.559 2.063-.18 2.788.378.724 1.139 1.258 2.472 1.738 1.703.615 3.745.397 5.833-.62.703-.345.786-.42.701-.645-.09-.243-.082-1.408.01-1.655.073-.194.054-.223-.3-.554C8.569 9.7 7.193 8.962 5.624 8.658c-.59-.114-1.823-.197-2.066-.14m9.287 1.757c-.624.057-.885.181-1.224.584-1.114 1.323-.59 3.062.883 2.925 1.079-.1 1.877-.915 1.946-1.996.026-.386 0-.522-.136-.789-.16-.318-.693-.803-.857-.782-.047.004-.322.032-.612.058m2.38 2.466c-.056.09-.182.31-.28.492-.1.177-.348.485-.552.676l-.37.353.075.329c.178.764.25 1.01.495 1.623a8.57 8.57 0 0 0 2.954 3.803c1.46 1.063 2.847.996 4.023-.199.556-.566.763-1.001.798-1.676.048-.945-.32-1.775-1.36-3.06-.963-1.182-2.966-2.159-4.915-2.396-.174-.021-.42-.054-.545-.075-.18-.029-.244-.002-.324.13m-5.084 2.089c-.597.464-1.547 1.356-2.128 2.001-.482.53-1.282 1.733-1.558 2.335-.564 1.228-.64 1.984-.28 2.732.171.352.276.471.597.668.52.318.986.452 1.583.45.826-.005 1.355-.186 2.193-.752 1.026-.692 2.328-2.632 2.62-3.9.097-.422.103-.596.032-1.203-.088-.748-.297-1.48-.586-2.043-.171-.33-.18-.338-.704-.45-.293-.063-.614-.17-.714-.239-.1-.065-.227-.121-.283-.121s-.401.233-.772.522"
+                  clipRule="evenodd"
+                />
+              </svg>
               Open to graduate software roles
             </div>
 
             <div className="mt-auto h-px w-2/3 bg-black/10"></div>
             <nav
               aria-label="Contact and public profile links"
-              className="flex flex-wrap gap-1.5 pt-5 pb-8 font-mono text-[9px] font-semibold"
+              className="flex flex-wrap gap-1.5 pt-5 pb-8 font-mono text-[9px]"
             >
               <a
                 href="https://www.linkedin.com/in/dibamalikzadeh"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Open Diba Malikzadeh on LinkedIn"
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#0a66c2] px-2.5 py-1 text-white/80 transition-[transform,color] duration-200 hover:-translate-y-px hover:text-white focus-visible:ring-2 focus-visible:ring-[#8e3f2e]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8d5c3] focus-visible:outline-none active:translate-y-0 active:scale-[0.98]"
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#0a66c2]/10 border border-[#0a66c2]/20 text-[#0a66c2] hover:bg-[#0a66c2] hover:text-white px-2.5 py-1 transition duration-200 focus-visible:ring-2 focus-visible:ring-[#8e3f2e]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8d5c3] focus-visible:outline-none active:translate-y-0 active:scale-[0.98]"
               >
                 <svg
                   aria-hidden="true"
@@ -182,7 +246,7 @@ export default function PortfolioCv() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Open Diba Malikzadeh on GitHub"
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#181717] px-2.5 py-1 text-white/80 transition-[transform,color] duration-200 hover:-translate-y-px hover:text-white focus-visible:ring-2 focus-visible:ring-[#8e3f2e]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8d5c3] focus-visible:outline-none active:translate-y-0 active:scale-[0.98]"
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#423630]/10 border border-[#423630]/20 text-[#423630] hover:bg-[#423630] hover:text-white px-2.5 py-1 transition duration-200 focus-visible:ring-2 focus-visible:ring-[#8e3f2e]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8d5c3] focus-visible:outline-none active:translate-y-0 active:scale-[0.98]"
               >
                 <svg
                   aria-hidden="true"
@@ -200,7 +264,7 @@ export default function PortfolioCv() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Open bydiba.dev in a new tab"
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#F27554] px-2.5 py-1 text-white/80 transition-[transform,color] duration-200 hover:-translate-y-px hover:text-white focus-visible:ring-2 focus-visible:ring-[#8e3f2e]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8d5c3] focus-visible:outline-none active:translate-y-0 active:scale-[0.98]"
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#C0561F]/10 border border-[#C0561F]/20 text-[#C0561F] hover:bg-[#C0561F] hover:text-white px-2.5 py-1 transition duration-200 focus-visible:ring-2 focus-visible:ring-[#8e3f2e]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8d5c3] focus-visible:outline-none active:translate-y-0 active:scale-[0.98]"
               >
                 <svg
                   aria-hidden="true"
@@ -217,7 +281,7 @@ export default function PortfolioCv() {
               <a
                 href="mailto:contact@bydiba.dev"
                 aria-label="Email Diba Malikzadeh"
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#EA4335] px-2.5 py-1 text-white/80 transition-[transform,color] duration-200 hover:-translate-y-px hover:text-white focus-visible:ring-2 focus-visible:ring-[#8e3f2e]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8d5c3] focus-visible:outline-none active:translate-y-0 active:scale-[0.98]"
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#B5333A]/10 border border-[#B5333A]/20 text-[#B5333A] hover:bg-[#B5333A] hover:text-white px-2.5 py-1 transition duration-200 focus-visible:ring-2 focus-visible:ring-[#8e3f2e]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8d5c3] focus-visible:outline-none active:translate-y-0 active:scale-[0.98]"
               >
                 <svg
                   aria-hidden="true"
@@ -249,7 +313,7 @@ export default function PortfolioCv() {
           </figure>
         </header>
 
-        <section className="grid grid-cols-[120px_minmax(0,1fr)] gap-6 bg-[#fffdf9] px-10 py-11">
+        <section className="grid shrink-0 grid-cols-[120px_minmax(0,1fr)] gap-6 bg-[#fffdf9] px-10 py-11">
           <div>
             <p className="font-mono text-[8px] font-bold tracking-[0.1em] text-black/30">
               01
@@ -265,10 +329,10 @@ export default function PortfolioCv() {
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path d="M11.995 14.531a3 3 0 0 1-.229-.009c-.877-.067-1.696-.509-2.578-1.392-1.866-1.865-1.866-3.758 0-5.624s3.758-1.865 5.625 0c1.865 1.867 1.865 3.759 0 5.624-.94.94-1.865 1.4-2.817 1.4Zm.023-6.423c-.409 0-.85.246-1.416.812-1.196 1.196-.966 1.829 0 2.796.518.519.949.783 1.316.812.416.045.909-.24 1.479-.812 1.195-1.195.966-1.829 0-2.796-.508-.509-.925-.812-1.379-.812" />
-                <path d="M11.986 1c-4.827.066-9.677 4.808-9.677 9.456 0 6.416 8.776 12.141 9.145 12.382a1.005 1.005 0 0 0 1.112-.012c.368-.252 9.021-6.25 9.126-12.418-.146-4.77-4.85-9.341-9.705-9.407Zm.001 19.773c-1.838-1.324-7.576-5.816-7.679-10.329.13-3.709 3.938-7.393 7.677-7.444 3.774.051 7.592 3.75 7.705 7.42-.074 4.302-5.864 8.976-7.704 10.353Z" />
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 1.74.5 3.37 1.41 4.84.95 1.54 2.2 2.86 3.16 4.4.47.75.81 1.45 1.17 2.26.26.55.47 1.5 1.26 1.5s1-.95 1.25-1.5c.37-.81.7-1.51 1.17-2.26.96-1.53 2.21-2.85 3.16-4.4C18.5 12.37 19 10.74 19 9c0-3.87-3.13-7-7-7m0 9.75a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5" />
               </svg>
-              United Kingdom
+              High Wycombe, UK
             </p>
           </div>
           <div className="min-w-0">
@@ -277,48 +341,54 @@ export default function PortfolioCv() {
               use.
             </p>
             <p className="mt-5 max-w-[570px] text-[14px] leading-[1.78] text-black/60">
-              I&apos;m a software engineer working across full-stack systems,
-              applied AI and product design. I&apos;ve shipped a live AI
-              revision platform, delivered production software for paying
-              clients, led a seven-person team and taught a module I had just
-              scored 100% in. I care about reliable outputs, clear interfaces
-              and the unglamorous engineering that makes a product trustworthy.
+              I&apos;m a full-stack and AI engineer, and most of what I know I
+              taught myself by building. I&apos;ve taken an AI learning platform
+              from a final-year project to a live product that takes payments,
+              delivered software for paying clients and led a seven-person team.
+              I care as much about how something is built as what it does, which
+              usually means the unglamorous engineering that makes a product
+              trustworthy and maintainable.
             </p>
           </div>
         </section>
 
-        <section className="grid grid-cols-[120px_minmax(0,1fr)] gap-6 bg-[linear-gradient(118deg,rgba(246,200,190,0.3)_0%,rgba(249,216,192,0.3)_55%,rgba(237,218,228,0.3)_100%)] px-10 py-9">
-          <div>
-            <p className="font-mono text-[8px] font-bold tracking-[0.1em] text-black/30">
-              02
-            </p>
-            <h2 className="mt-1.5 font-mono text-[9.5px] leading-[1.45] font-extrabold tracking-[0.17em] text-[#94412f] uppercase">
-              Selected evidence
-            </h2>
-          </div>
-          <dl className="grid min-w-0 grid-cols-2 gap-x-10 gap-y-7 py-1">
-            {proofPoints.map((point, index) => (
-              <div
-                key={point.label}
-                className="grid grid-cols-[24px_minmax(0,1fr)] gap-3"
-              >
-                <span className="font-mono text-[8px] font-bold tracking-[0.08em] text-[#b55a43]">
-                  0{index + 1}
-                </span>
-                <div>
-                  <dd className="font-clash text-[18px] leading-none font-medium tracking-[-0.035em] text-[#2a2420]">
-                    {point.value}
-                  </dd>
-                  <dt className="mt-2 text-[8px] leading-[1.5] font-semibold tracking-[0.045em] text-black/40 uppercase">
-                    {point.label}
-                  </dt>
+        <div className="flex shrink-0 flex-col bg-[linear-gradient(118deg,rgba(246,200,190,0.3)_0%,rgba(249,216,192,0.3)_55%,rgba(237,218,228,0.3)_100%)]">
+          <section className="grid shrink-0 grid-cols-[120px_minmax(0,1fr)] gap-6 px-10 py-9">
+            <div>
+              <p className="font-mono text-[8px] font-bold tracking-[0.1em] text-black/30">
+                02
+              </p>
+              <h2 className="mt-1.5 font-mono text-[9.5px] leading-[1.45] font-extrabold tracking-[0.17em] text-[#94412f] uppercase">
+                Selected evidence
+              </h2>
+            </div>
+            <dl className="grid min-w-0 grid-cols-2 gap-x-10 gap-y-7 py-1">
+              {proofPoints.map((point, index) => (
+                <div
+                  key={point.label}
+                  className="grid grid-cols-[24px_minmax(0,1fr)] gap-3"
+                >
+                  <span className="font-mono text-[8px] font-bold tracking-[0.08em] text-[#b55a43]">
+                    0{index + 1}
+                  </span>
+                  <div>
+                    <dd className="font-clash text-[18px] leading-none font-medium tracking-[-0.035em] text-[#2a2420]">
+                      {point.value}
+                    </dd>
+                    <dt className="mt-2 text-[8px] leading-[1.5] font-semibold tracking-[0.045em] text-black/40 uppercase">
+                      {point.label}
+                    </dt>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </dl>
-        </section>
+              ))}
+            </dl>
+          </section>
+          <Foot page={1} />
+        </div>
+      </Page>
 
-        <section className="grid grid-cols-[120px_minmax(0,1fr)] gap-6 bg-[#fffdf9] px-10 py-11">
+      <Page>
+        <section className="grid shrink-0 grid-cols-[120px_minmax(0,1fr)] gap-6 bg-[#fffdf9] px-10 py-11">
           <div>
             <p className="font-mono text-[8px] font-bold tracking-[0.1em] text-black/30">
               03
@@ -327,7 +397,7 @@ export default function PortfolioCv() {
               Selected work
             </h2>
             <p className="mt-3 font-mono text-[8px] leading-[1.5] font-semibold tracking-[0.1em] text-black/50 uppercase">
-              2024 - 2026
+              2024 – 2026
             </p>
           </div>
           <div className="min-w-0">
@@ -335,51 +405,59 @@ export default function PortfolioCv() {
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
                   <p className="font-mono text-[8px] font-bold tracking-[0.16em] text-[#ad4f39] uppercase">
-                    Featured · Final-year project · 74%
+                    Featured · Final-year project · Live since August 2025
                   </p>
                   <h3 className="mt-2 font-clash text-[31px] leading-none font-medium tracking-[-0.045em] text-black">
                     Aicademy
                   </h3>
-                  <p className="mt-2 text-[11px] font-semibold text-black/50">
-                    AI-powered adaptive revision platform
+                  <p className="text-[11px] font-medium text-black/50">
+                    AI-powered study workspace
                   </p>
                 </div>
                 <a
                   href="https://useaicademy.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex shrink-0 items-center gap-1 text-[10px] font-semibold text-black/50 transition-colors hover:text-[#b6543d] focus-visible:underline focus-visible:underline-offset-4 focus-visible:outline-none"
+                  className="group inline-flex shrink-0 items-center gap-1 text-[10px] font-medium text-black/50 transition-colors hover:text-[#b6543d] focus-visible:underline focus-visible:underline-offset-4 focus-visible:outline-none"
                 >
                   useaicademy.com
-                  <span
-                    aria-hidden="true"
-                    className="text-[11px] leading-none transition-transform group-hover:-translate-y-px group-hover:translate-x-px"
+                  <svg
+                    className="w-[1em] h-[1em] mt-[0.15em]"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
                   >
-                    ↗
-                  </span>
+                    <path d="m5.469 9.47 4-4a.751.751 0 1 1 1.062 1.062l-4 4A.751.751 0 0 1 5.47 9.47m8.187-7.125a3.755 3.755 0 0 0-5.304 0L6.47 4.225a.751.751 0 1 0 1.062 1.063l1.88-1.879a2.25 2.25 0 1 1 3.182 3.183L10.714 8.47a.751.751 0 0 0 1.062 1.062l1.88-1.878a3.755 3.755 0 0 0-.002-5.307zM8.47 10.712l-1.88 1.88a2.252 2.252 0 0 1-3.841-1.591c0-.597.237-1.17.66-1.592l1.878-1.88a.752.752 0 0 0-1.062-1.062L2.347 8.35a3.75 3.75 0 1 0 5.305 5.304l1.879-1.88a.751.751 0 0 0-1.063-1.062z" />{" "}
+                  </svg>
                 </a>
               </div>
 
               <p className="mt-4 font-mono text-[8px] leading-[1.6] font-semibold tracking-[0.04em] text-[#9c4a37] uppercase">
-                Next.js · TypeScript · PostgreSQL · Auth.js · Azure OpenAI ·
+                Next.js · TypeScript · Postgres · Auth.js · Azure OpenAI ·
                 Vercel
               </p>
-              <p className="mt-4 text-[13px] leading-[1.7] text-black/60">
-                Built a live platform that transforms a topic or uploaded
-                PDF/DOCX into structured learning paths, quizzes and flashcards,
-                supported by a contextual AI tutor, spaced-repetition review and
-                progress analytics.
+              <p className="mt-4 text-[13px] leading-[1.7] text-black/80">
+                Built a platform that turns a topic or uploaded PDF/DOCX into
+                structured learning paths, quizzes and flashcards, with a
+                contextual AI tutor, spaced repetition and progress analytics.
               </p>
 
-              <ul className="mt-4 space-y-2 text-[12px] leading-[1.65] text-black/60">
+              <ul className="mt-2 space-y-1 text-[12px] leading-[1.6] text-black/60">
                 <li className="flex gap-3">
                   <span aria-hidden="true" className="text-[#bd5a43]">
                     —
                   </span>
                   <span>
-                    Modelled the relational data layer and strict AI output
-                    contracts so generated study material remains reliable,
-                    editable and grounded in source documents.
+                    Modelled the{" "}
+                    <span className="font-medium text-black/80">
+                      relational data layer
+                    </span>{" "}
+                    and{" "}
+                    <span className="font-medium text-black/80">
+                      strict AI output contracts
+                    </span>{" "}
+                    so generated study material remains reliable, editable and
+                    grounded in source documents.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -387,120 +465,109 @@ export default function PortfolioCv() {
                     —
                   </span>
                   <span>
-                    Validated with 18 users across two rounds: 5.0/5 ease of
-                    use, 4.9/5 usefulness and 10 of 12 preferring it to a
-                    general-purpose AI tool.
+                    Validated with{" "}
+                    <span className="font-medium text-black/80">18 users</span>{" "}
+                    across two rounds:{" "}
+                    <span className="font-medium text-black/80">5.0/5</span>{" "}
+                    ease of use,{" "}
+                    <span className="font-medium text-black/80">4.9/5</span>{" "}
+                    usefulness and{" "}
+                    <span className="font-medium text-black/80">10 of 12</span>{" "}
+                    preferring it to a general-purpose AI tool.
                   </span>
                 </li>
               </ul>
             </article>
 
-            <div className="mt-8 border-t border-[#312923]/10">
-              {supportingProjects.map((project, index) => (
+            <div className="grid grid-cols-2 gap-x-9">
+              {supportingProjects.map((project) => (
                 <article
                   key={project.name}
-                  className={`py-5 ${
-                    index ? "border-t border-[#312923]/10" : ""
-                  }`}
+                  className="border-t border-[#312923]/10 pt-5 mt-5"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
-                    <div>
-                      <h3 className="font-clash text-[20px] leading-none font-medium tracking-[-0.03em] text-black">
-                        {project.name}
-                      </h3>
-                      <p className="mt-2 text-[8px] font-bold tracking-[0.1em] text-[#a44a35] uppercase">
+                    <div className="w-full">
+                      <div className="flex justify-between items-start">
+                        <h3 className="font-clash text-[20px] leading-none font-medium tracking-[-0.03em] text-black">
+                          {project.name}
+                        </h3>
+                        {project.href && project.linkLabel && (
+                          <a
+                            href={project.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="group inline-flex shrink-0 items-center gap-1 text-[9px] font-medium text-black/50 transition-colors hover:text-[#b6543d] focus-visible:underline focus-visible:underline-offset-4 focus-visible:outline-none"
+                          >
+                            {project.linkLabel}
+                            <svg
+                              className="w-[1em] h-[1em] mt-[0.15em]"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="currentColor"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="m5.469 9.47 4-4a.751.751 0 1 1 1.062 1.062l-4 4A.751.751 0 0 1 5.47 9.47m8.187-7.125a3.755 3.755 0 0 0-5.304 0L6.47 4.225a.751.751 0 1 0 1.062 1.063l1.88-1.879a2.25 2.25 0 1 1 3.182 3.183L10.714 8.47a.751.751 0 0 0 1.062 1.062l1.88-1.878a3.755 3.755 0 0 0-.002-5.307zM8.47 10.712l-1.88 1.88a2.252 2.252 0 0 1-3.841-1.591c0-.597.237-1.17.66-1.592l1.878-1.88a.752.752 0 0 0-1.062-1.062L2.347 8.35a3.75 3.75 0 1 0 5.305 5.304l1.879-1.88a.751.751 0 0 0-1.063-1.062z" />{" "}
+                            </svg>
+                          </a>
+                        )}
+                      </div>
+
+                      <p className="mt-2 font-mono text-[8px] leading-[1.6] font-semibold tracking-[0.04em] text-[#9c4a37] uppercase">
                         {project.descriptor}
                       </p>
                     </div>
-                    {project.href && project.linkLabel && (
-                      <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="group inline-flex shrink-0 items-center gap-1 text-[10px] font-semibold text-black/50 transition-colors hover:text-[#b6543d] focus-visible:underline focus-visible:underline-offset-4 focus-visible:outline-none"
-                      >
-                        {project.linkLabel}
-                        <span
-                          aria-hidden="true"
-                          className="text-[11px] leading-none transition-transform group-hover:-translate-y-px group-hover:translate-x-px"
-                        >
-                          ↗
-                        </span>
-                      </a>
-                    )}
                   </div>
                   <p className="mt-3 text-[12px] leading-[1.65] text-black/60">
                     {project.summary}
                   </p>
-                  <p className="mt-2 font-mono text-[8px] leading-[1.6] font-semibold tracking-[0.04em] text-black/40 uppercase">
+                  <p className="mt-2 font-mono text-[7px] leading-[1.6] tracking-[0.04em] text-black/40 uppercase">
                     {project.stack}
                   </p>
                 </article>
               ))}
             </div>
-
-            <a
-              href="https://github.com/dmalikzadeh"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="See more of Diba Malikzadeh's work on GitHub"
-              className="group mt-6 inline-flex items-center gap-2 font-mono text-[9px] font-bold tracking-[0.08em] text-[#94412f] uppercase transition-colors hover:text-[#b6543d] focus-visible:underline focus-visible:underline-offset-4 focus-visible:outline-none"
-            >
-              <svg
-                aria-hidden="true"
-                className="size-3 shrink-0"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 16 16"
-              >
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-              </svg>
-              More work on GitHub
-              <span
-                aria-hidden="true"
-                className="text-[11px] leading-none transition-transform group-hover:-translate-y-px group-hover:translate-x-px"
-              >
-                ↗
-              </span>
-            </a>
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#241f1c] px-10 py-14">
-          <div
-            aria-hidden="true"
-            className="absolute -top-20 right-[12%] size-56 rounded-full bg-[#f6c8be]/10 blur-3xl"
-          />
-          <div className="relative z-10">
-            <div className="flex items-center gap-3 font-mono text-[9.5px] leading-[1.45] font-extrabold tracking-[0.17em] text-[#e8a891] uppercase">
-              <span className="font-bold text-white/30">04</span>
-              <span>How I work</span>
-              <span className="h-px w-16 bg-white/20" />
+        <div className="flex grow shrink-0 flex-col bg-[#241f1c]">
+          <section className="relative grow shrink-0 overflow-hidden p-10">
+            <div
+              aria-hidden="true"
+              className="absolute -top-20 right-[12%] size-56 rounded-full bg-[#f6c8be]/10 blur-3xl"
+            />
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 font-mono text-[9.5px] leading-[1.45] font-extrabold tracking-[0.17em] text-[#e8a891] uppercase">
+                <span className="font-bold text-white/30">04</span>
+                <span>How I work</span>
+                <span className="h-px w-16 bg-white/20" />
+              </div>
+
+              <p className="mt-4 max-w-[520px] font-clash text-[31px] leading-[1.1] font-medium tracking-[-0.03em] text-[#fdf6f0]">
+                Three things I keep coming back to.
+              </p>
+
+              <div className="mt-6 grid grid-cols-3 gap-8">
+                {principles.map((principle, index) => (
+                  <div key={principle.title}>
+                    <p className="font-mono text-[9px] font-bold tracking-[0.08em] text-[#e0846a]">
+                      0{index + 1}
+                    </p>
+                    <h3 className="mt-2 font-clash text-[18px] leading-[1.15] tracking-[-0.03em] text-[#fdf6f0]">
+                      {principle.title}
+                    </h3>
+                    <p className="mt-3 text-[12px] leading-[1.65] text-white/50">
+                      {principle.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
+          </section>
+          <Foot page={2} dark />
+        </div>
+      </Page>
 
-            <p className="mt-6 max-w-[520px] font-clash text-[31px] leading-[1.1] font-medium tracking-[-0.03em] text-[#fdf6f0]">
-              Three things I keep coming back to.
-            </p>
-
-            <div className="mt-10 grid grid-cols-3 gap-8">
-              {principles.map((principle, index) => (
-                <div key={principle.title}>
-                  <p className="font-mono text-[9px] font-bold tracking-[0.08em] text-[#e0846a]">
-                    0{index + 1}
-                  </p>
-                  <h3 className="mt-3 font-clash text-[18px] leading-[1.15] font-medium tracking-[-0.03em] text-[#fdf6f0]">
-                    {principle.title}
-                  </h3>
-                  <p className="mt-3 text-[12px] leading-[1.75] text-white/50">
-                    {principle.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="grid grid-cols-[120px_minmax(0,1fr)] gap-6 bg-[#fffdf9] px-10 py-10">
+      <Page>
+        <section className="grid shrink-0 grid-cols-[120px_minmax(0,1fr)] gap-6 bg-[#fffdf9] px-10 py-10">
           <div>
             <p className="font-mono text-[8px] font-bold tracking-[0.1em] text-black/30">
               05
@@ -518,7 +585,7 @@ export default function PortfolioCv() {
 
                 <article>
                   <p className="text-[9px] font-bold tracking-[0.1em] text-black/40 uppercase">
-                    Sep - Dec 2025
+                    Sep – Dec 2025
                   </p>
                   <h3 className="mt-2 text-[14px] leading-5 font-bold">
                     Undergraduate Teaching Associate
@@ -527,24 +594,25 @@ export default function PortfolioCv() {
                     University of Birmingham · Functional Programming
                   </p>
                   <p className="mt-2 text-[12px] leading-[1.7] text-black/50">
-                    Supported second-year Haskell labs and office hours after
-                    achieving 100% in the module, explaining recursion, type
-                    systems and higher-order functions to mixed-experience
-                    groups.
+                    Supported weekly Haskell labs and office hours for
+                    second-year students, explaining recursion, type systems and
+                    higher-order functions to groups with mixed experience.
                   </p>
                 </article>
 
                 <article className="mt-7">
                   <p className="text-[9px] font-bold tracking-[0.1em] text-black/40 uppercase">
-                    2021 - 2024
+                    2021 – 2024
                   </p>
                   <h3 className="mt-2 text-[14px] leading-5 font-bold">
                     Customer-facing roles
                   </h3>
+                  <p className="text-[9px] leading-[1.5] text-black/40 italic">
+                    High Wycombe
+                  </p>
                   <p className="mt-2 text-[12px] leading-[1.7] text-black/50">
-                    Worked across Clinique, Tesco, McDonald&apos;s and
-                    hospitality while studying full-time — practical experience
-                    in communication, reliability and fast-paced teamwork.
+                    Retail and hospitality alongside full-time study, including
+                    counter sales at Clinique.
                   </p>
                 </article>
               </div>
@@ -556,33 +624,32 @@ export default function PortfolioCv() {
 
                 <article>
                   <p className="text-[9px] font-bold tracking-[0.1em] text-black/40 uppercase">
-                    Sep 2023 - Jul 2026
+                    Sep 2023 – Jul 2026
                   </p>
                   <h3 className="mt-2 text-[14px] leading-5 font-bold">
                     BSc (Hons) Computer Science
                   </h3>
                   <p className="text-[9px] leading-[1.5] text-black/40 italic">
-                    University of Birmingham · First-Class Honours
+                    University of Birmingham · First-Class Honours · 76%
                   </p>
                   <p className="mt-2 text-[12px] leading-[1.7] text-black/50">
-                    Overall average of{" "}
-                    <span className="font-medium text-black/80">75.6%</span>.
-                    Highlights include Functional Programming{" "}
+                    Highlights include: Functional Programming{" "}
                     <span className="font-medium text-black/80">(100%)</span>,
-                    Team Software Project{" "}
+                    OOP <span className="font-medium text-black/80">(90%)</span>
+                    , Team Project{" "}
                     <span className="font-medium text-black/80">(88%)</span>,
+                    Full Stack Development{" "}
+                    <span className="font-medium text-black/80">(87%)</span>,
+                    Data Structures &amp; Algorithms{" "}
+                    <span className="font-medium text-black/80">(83%)</span> and
                     Machine Learning{" "}
-                    <span className="font-medium text-black/80">(82%)</span>,
-                    Security &amp; Networks{" "}
-                    <span className="font-medium text-black/80">(81%)</span> and
-                    Artificial Intelligence{" "}
-                    <span className="font-medium text-black/80">(80%)</span>.
+                    <span className="font-medium text-black/80">(82%)</span>.
                   </p>
                 </article>
 
                 <article className="mt-7">
                   <p className="text-[9px] font-bold tracking-[0.1em] text-black/40 uppercase">
-                    2020 - 2022
+                    2020 – 2022
                   </p>
                   <h3 className="mt-2 text-[14px] leading-5 font-bold">
                     A-Levels
@@ -596,7 +663,7 @@ export default function PortfolioCv() {
                     Further Mathematics{" "}
                     <span className="font-medium text-black/80">(A*)</span> and
                     Computer Science{" "}
-                    <span className="font-medium text-black/80">(A)</span>
+                    <span className="font-medium text-black/80">(A)</span>.
                   </p>
                 </article>
               </div>
@@ -604,7 +671,7 @@ export default function PortfolioCv() {
           </div>
         </section>
 
-        <section className="grid grid-cols-[120px_minmax(0,1fr)] gap-6 bg-[linear-gradient(118deg,rgba(246,200,190,0.3)_0%,rgba(249,216,192,0.3)_55%,rgba(237,218,228,0.3)_100%)] px-10 py-10">
+        <section className="grid shrink-0 grid-cols-[120px_minmax(0,1fr)] gap-6 bg-[linear-gradient(118deg,rgba(246,200,190,0.3)_0%,rgba(249,216,192,0.3)_55%,rgba(237,218,228,0.3)_100%)] px-10 py-10">
           <div>
             <p className="font-mono text-[8px] font-bold tracking-[0.1em] text-black/30">
               06
@@ -617,7 +684,7 @@ export default function PortfolioCv() {
             <dl className="grid grid-cols-2 gap-x-10 gap-y-7">
               {technicalPractice.map((group) => (
                 <div key={group.label}>
-                  <dt className="text-[9px] font-bold tracking-[0.12em] text-[#9d4733] uppercase">
+                  <dt className="font-mono text-[8px] font-bold tracking-[0.13em] text-[#a34a35] uppercase">
                     {group.label}
                   </dt>
                   <dd className="mt-2 text-[12px] leading-[1.7] text-black/60">
@@ -627,32 +694,29 @@ export default function PortfolioCv() {
               ))}
             </dl>
 
-            <aside className="mt-9 grid grid-cols-2 gap-10 border-t-2 border-[#c36049]/40 pt-6">
-              <div>
-                <p className="font-mono text-[8px] font-bold tracking-[0.17em] text-[#a84f3b] uppercase">
-                  Security foundation
-                </p>
-                <p className="mt-3 font-clash text-[20px] leading-[1.08] font-medium tracking-[-0.025em] text-[#2d2723]">
-                  Built into the product work.
-                </p>
-              </div>
-              <p className="text-[12px] leading-[1.75] text-black/60">
+            <aside className="mt-7">
+              <p className="font-mono text-[8px] font-bold tracking-[0.13em] text-[#a34a35] uppercase">
+                Security foundation
+              </p>
+              <p className="mt-2 font-clash text-[20px] font-medium leading-[1.08] tracking-[-0.025em] text-[#2d2723]">
+                Built into the product work.
+              </p>
+              <p className="mt-4 text-[12px] leading-[1.7] text-black/60">
                 Practical coursework covered reverse engineering, binary
                 patching, buffer-overflow exploitation and dynamic analysis
-                across x64 and ARM. Product work includes OAuth, JWT, role-based
-                access control, server-side validation, secrets management and
-                CI quality gates.
+                across x64 and ARM. In production that means role-based access
+                control, server-side validation and secrets management.
               </p>
             </aside>
           </div>
         </section>
 
-        <footer className="bg-[#fffdf9] px-10 py-10">
+        <footer className="shrink-0 bg-[#fffdf9] px-10 py-10">
           <p className="font-mono text-[9.5px] leading-[1.45] font-extrabold tracking-[0.17em] text-[#94412f] uppercase">
             Colophon
           </p>
 
-          <dl className="mt-6 grid grid-cols-4 gap-x-8 gap-y-6">
+          <dl className="mt-4 grid grid-cols-4 gap-x-8 gap-y-6">
             {colophon.map((item) => (
               <div key={item.label}>
                 <dt className="font-mono text-[8px] font-bold tracking-[0.13em] text-[#a34a35] uppercase">
@@ -665,7 +729,7 @@ export default function PortfolioCv() {
             ))}
           </dl>
 
-          <div className="mt-9 flex flex-wrap items-end justify-between gap-5 border-t border-[#312923]/10 pt-6">
+          <div className="mt-6 flex flex-wrap items-end justify-between gap-5 border-t border-[#312923]/5 pt-4">
             <div>
               <a
                 href="https://bydiba.dev"
@@ -706,7 +770,7 @@ export default function PortfolioCv() {
             </a>
           </div>
         </footer>
-      </div>
+      </Page>
     </article>
   );
 }
