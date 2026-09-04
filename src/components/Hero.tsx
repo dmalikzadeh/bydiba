@@ -19,7 +19,7 @@ export default function Hero() {
     const smoother = ScrollSmoother.get();
 
     if (smoother) {
-      smoother.scrollTo(target, true, "top top");
+      smoother.scrollTo(target, true, "top+=1 top");
       return;
     }
 
